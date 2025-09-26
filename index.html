@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SOMAVIA - Multisensorische Regeneration für Ihr Business</title>
+    <!-- FAVICON EINBINDUNG -->
+    <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,17 +17,17 @@
             background-color: #1a1a1a;
             color: #e0e0e0;
         }
+        /* Stellt sicher, dass das Logo auf dem dunklen Hintergrund sichtbar ist */
         .header-logo {
-            filter: brightness(150%);
+            filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.4)); 
+            height: 40px; /* Höhe des Logos definiert */
+            width: auto;
         }
         .accent-color {
             color: #00bcd4; /* Ein schöner Türkis-Farbton */
         }
         .accent-bg {
             background-color: #00bcd4;
-        }
-        .text-dark-blue {
-            color: #00838f;
         }
         .bg-dark {
             background-color: #121212;
@@ -79,8 +82,8 @@
 <header class="bg-dark p-6 fixed top-0 w-full z-50 shadow-lg">
     <div class="container mx-auto flex justify-between items-center">
         <a href="#hero">
-            <!-- Platzhalter für das Logo -->
-            <img src="https://placehold.co/150x40/1a1a1a/00bcd4?text=SOMAVIA+Logo" alt="SOMAVIA Logo" class="h-10 header-logo">
+            <!-- LOGO EINBINDUNG -->
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo">
         </a>
         <nav class="hidden md:flex space-x-8 text-sm">
             <a href="#hero" class="nav-link">Startseite</a>
@@ -111,26 +114,22 @@
         <div class="container mx-auto text-center px-4">
             <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Revolutionieren Sie Ihr Angebot.</h2>
             <p class="max-w-3xl mx-auto text-lg md:text-xl font-light mb-12">
-                SOMAVIA ist ein revolutionäres, multisensorisches Therapiesystem, das die wissenschaftlich fundierten Vorteile von Licht-, Klang- und Schwingungstherapie synergetisch kombiniert, um ein tiefgreifendes Regenerationserlebnis zu schaffen. Ideal für Praxen, Wellnesszentren und Hotels.
+                SOMAVIA ist ein revolutionäres, multisensorisches Therapiesystem, das die wissenschaftlich fundierten Vorteile von **Licht- und Klangtherapie** synergetisch kombiniert, um ein tiefgreifendes Regenerationserlebnis zu schaffen. Ideal für Praxen, Wellnesszentren und Hotels.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
                 <div class="flex flex-col items-center">
                     <div class="text-6xl accent-color mb-4">
+                        <!-- Icon für Licht -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18M8 8h8M4 13h16m-7 6h6"/></svg>
                     </div>
                     <p class="text-xl font-semibold">Licht</p>
                 </div>
                 <div class="flex flex-col items-center">
                     <div class="text-6xl accent-color mb-4">
+                        <!-- Icon für Klang -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-3.111 0-5.5-2.389-5.5-5.5S5.889 8 9 8s5.5 2.389 5.5 5.5-2.389 5.5-5.5 5.5zM12 3h.01M12 21v-2M3 12h2M21 12h-2m-6-8l-2.828 2.828M15 15l-2.828-2.828M6 6l2.828 2.828M18 18l-2.828-2.828"/></svg>
                     </div>
                     <p class="text-xl font-semibold">Klang</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="text-6xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h.01M16 16h.01M18 10h.01M18 16h.01M20 10h.01M20 16h.01M22 10h.01M22 16h.01M24 10h.01M24 16h.01"/></svg>
-                    </div>
-                    <p class="text-xl font-semibold">Schwingung</p>
                 </div>
             </div>
             <div class="max-w-4xl mx-auto">
@@ -152,7 +151,7 @@
             <p class="max-w-3xl mx-auto text-lg md:text-xl font-light mb-16">
                 Wir kombinieren die neuesten wissenschaftlichen Erkenntnisse in einem synergetischen System, das Körper und Geist in einen Zustand tiefer Regeneration versetzt.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto">
                 <div class="bg-dark rounded-lg p-8 shadow-lg">
                     <div class="text-5xl accent-color mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18M8 8h8M4 13h16m-7 6h6"/></svg>
@@ -167,13 +166,7 @@
                     <h3 class="text-2xl font-semibold mb-2">Klangtherapie</h3>
                     <p class="font-light opacity-90">Binaurale Beats und therapeutische Frequenzen synchronisieren Ihre Gehirnwellen und führen zu tiefen Entspannungszuständen, Reduzierung von Stress und verbesserter Fokussierung.</p>
                 </div>
-                <div class="bg-dark rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h.01M16 16h.01M18 10h.01M18 16h.01M20 10h.01M20 16h.01M22 10h.01M22 16h.01M24 10h.01M24 16h.01"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Multisensorische Synergie</h3>
-                    <p class="font-light opacity-90">Die koordinierte Kombination von Licht, Klang und Schwingung schafft ein immersives Erlebnis, das die körpereigenen Selbstheilungskräfte aktiviert und die Effektivität jeder einzelnen Therapie maximiert.</p>
-                </div>
+                <!-- Die multisensorische Synergie ist nun in der allgemeinen Beschreibung oben integriert -->
             </div>
         </div>
     </section>
@@ -327,7 +320,8 @@
 <footer class="bg-dark text-gray-400 py-8">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
         <div class="mb-4 md:mb-0">
-            <img src="https://placehold.co/120x30/1a1a1a/00bcd4?text=SOMAVIA+Logo" alt="SOMAVIA Logo" class="h-8 header-logo mx-auto md:mx-0">
+            <!-- LOGO EINBINDUNG im Footer -->
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo mx-auto md:mx-0">
         </div>
         <div class="flex flex-wrap justify-center md:justify-end space-x-4 mb-4 md:mb-0 text-sm">
             <a href="#" class="hover:underline">Impressum</a>
