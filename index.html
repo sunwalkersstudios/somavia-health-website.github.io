@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SOMAVIA - Multisensorische Regeneration für Ihr Business</title>
+    <title>SOMAVIA | Neuro-Regeneration & Business Excellence</title>
     <!-- FAVICON EINBINDUNG -->
     <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
     
@@ -16,255 +16,210 @@
             font-family: 'Montserrat', sans-serif;
             background-color: #1a1a1a;
             color: #e0e0e0;
+            scroll-behavior: smooth;
         }
-        /* Stellt sicher, dass das Logo auf dem dunklen Hintergrund sichtbar ist */
         .header-logo {
-            filter: drop-shadow(0 0 5px rgba(0, 188, 212, 0.4)); 
-            height: 40px; /* Höhe des Logos definiert */
+            filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.3)); 
+            height: 45px;
             width: auto;
         }
-        .accent-color {
-            color: #00bcd4; /* Ein schöner Türkis-Farbton */
-        }
-        .accent-bg {
-            background-color: #00bcd4;
-        }
-        .bg-dark {
-            background-color: #121212;
-        }
-        .nav-link:hover {
-            color: #00bcd4;
-        }
+        .accent-color { color: #00bcd4; }
+        .accent-bg { background-color: #00bcd4; }
+        .bg-dark { background-color: #121212; }
+        .nav-link { transition: color 0.3s; }
+        .nav-link:hover { color: #00bcd4; }
+        
         .cta-button {
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
         }
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 188, 212, 0.6);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.5);
+            background-color: #00acc1;
         }
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 0.5rem;
+        
+        .glass-card {
+            background: rgba(44, 44, 44, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
         }
+
         .section-title::after {
             content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 50px;
+            display: block;
+            width: 60px;
             height: 3px;
-            background-color: #00bcd4;
-            border-radius: 9999px;
+            background: #00bcd4;
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
         }
-        .testimonial-card {
-            background-color: #2c2c2c;
-            border-radius: 12px;
-            padding: 2rem;
+
+        .science-link {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #00bcd4;
+            opacity: 0.6;
+            text-decoration: underline;
+            margin-top: 0.5rem;
+            display: inline-block;
         }
-        .form-input {
-            background-color: #2c2c2c;
-            border: 1px solid #444;
-            color: #e0e0e0;
+        .science-link:hover { opacity: 1; }
+
+        /* Animation für sanftes Einblenden */
+        .fade-in {
+            animation: fadeIn 1.2s ease-out forwards;
         }
-        .form-input:focus {
-            outline: none;
-            border-color: #00bcd4;
-            box-shadow: 0 0 0 2px rgba(0, 188, 212, 0.5);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
 <!-- Header -->
-<header class="bg-dark p-6 fixed top-0 w-full z-50 shadow-lg">
+<header class="bg-dark/90 backdrop-blur-md p-5 fixed top-0 w-full z-50 border-b border-white/5">
     <div class="container mx-auto flex justify-between items-center">
         <a href="#hero">
-            <!-- LOGO EINBINDUNG -->
             <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo">
         </a>
-        <nav class="hidden md:flex space-x-8 text-sm">
-            <a href="#hero" class="nav-link">Startseite</a>
+        <nav class="hidden lg:flex space-x-10 text-xs font-medium tracking-widest uppercase">
             <a href="#technology" class="nav-link">Technologie</a>
-            <a href="#applications" class="nav-link">Anwendungsbereiche</a>
-            <a href="#formats" class="nav-link">Formate</a>
-            <a href="#why-somavia" class="nav-link">Warum SOMAVIA?</a>
-            <a href="#contact" class="nav-link">Kontakt</a>
+            <a href="#applications" class="nav-link">Business</a>
+            <a href="#formats" class="nav-link">Systeme</a>
+            <a href="#why-somavia" class="nav-link">USP</a>
+            <a href="#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anfrage</a>
         </nav>
     </div>
 </header>
 
-<main class="pt-20">
+<main>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative text-center min-h-screen flex items-center justify-center p-8 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/2c2c2c/e0e0e0?text=Luxuri%C3%B6se+Regenerations-Umgebung');">
-        <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-4">
-            <p class="text-xl md:text-2xl font-light mb-4 accent-color tracking-wide">SOMAVIA – Multisensorische Regeneration für Körper & Geist.</p>
-            <h1 class="text-3xl md:text-6xl font-bold mb-4 leading-tight">Die Zukunft der Regeneration für Ihr Business.</h1>
-            <p class="text-lg md:text-xl font-light mb-8 opacity-90">Erschließen Sie neue Premium-Services für Ihre Kunden mit unserem innovativen Therapiesystem.</p>
-            <a href="#contact" class="inline-block py-3 px-8 rounded-full font-semibold cta-button accent-bg text-black transition-all">Jetzt unverbindlich anfragen</a>
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&q=80&w=2000" alt="Regenerationsumgebung" class="w-full h-full object-cover opacity-30">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#1a1a1a] via-transparent to-[#1a1a1a]"></div>
         </div>
-    </section>
-    
-    <!-- Short Overview & Trust Section -->
-    <section id="overview" class="py-16 md:py-24 bg-dark">
-        <div class="container mx-auto text-center px-4">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Revolutionieren Sie Ihr Angebot.</h2>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl font-light mb-12">
-                SOMAVIA ist ein revolutionäres, multisensorisches Therapiesystem, das die wissenschaftlich fundierten Vorteile von **Licht- und Klangtherapie** synergetisch kombiniert, um ein tiefgreifendes Regenerationserlebnis zu schaffen. Ideal für Praxen, Wellnesszentren und Hotels.
+        
+        <div class="relative z-10 max-w-5xl fade-in">
+            <span class="text-[#00bcd4] font-medium tracking-[0.3em] uppercase text-sm mb-6 block">Neuro-Regeneration & Peak Performance</span>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">Die Zukunft der <span class="accent-color">effizienten</span> Regeneration.</h1>
+            <p class="text-lg md:text-2xl font-light mb-10 max-w-3xl mx-auto opacity-80 leading-relaxed">
+                SOMAVIA kombiniert Photobiomodulation und neuro-akustische Synchronisation, um das Nervensystem effizient zu regulieren. Ein technologischer Meilenstein für moderne Therapiekonzepte.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-12">
-                <div class="flex flex-col items-center">
-                    <div class="text-6xl accent-color mb-4">
-                        <!-- Icon für Licht -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18M8 8h8M4 13h16m-7 6h6"/></svg>
-                    </div>
-                    <p class="text-xl font-semibold">Licht</p>
-                </div>
-                <div class="flex flex-col items-center">
-                    <div class="text-6xl accent-color mb-4">
-                        <!-- Icon für Klang -->
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-16 h-16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-3.111 0-5.5-2.389-5.5-5.5S5.889 8 9 8s5.5 2.389 5.5 5.5-2.389 5.5-5.5 5.5zM12 3h.01M12 21v-2M3 12h2M21 12h-2m-6-8l-2.828 2.828M15 15l-2.828-2.828M6 6l2.828 2.828M18 18l-2.828-2.828"/></svg>
-                    </div>
-                    <p class="text-xl font-semibold">Klang</p>
-                </div>
-            </div>
-            <div class="max-w-4xl mx-auto">
-                <p class="text-center font-light text-gray-400">Vertraut von führenden Wellnesszentren und Kliniken</p>
-                <div class="flex flex-wrap justify-center items-center mt-4 opacity-50">
-                    <!-- Platzhalter für Partner-Logos -->
-                    <img src="https://placehold.co/100x40/1a1a1a/e0e0e0?text=Logo+1" alt="Partner Logo" class="h-8 m-4">
-                    <img src="https://placehold.co/100x40/1a1a1a/e0e0e0?text=Logo+2" alt="Partner Logo" class="h-8 m-4">
-                    <img src="https://placehold.co/100x40/1a1a1a/e0e0e0?text=Logo+3" alt="Partner Logo" class="h-8 m-4">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Section -->
-    <section id="technology" class="py-16 md:py-24 bg-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Wissenschaftlich fundierte Regeneration.</h2>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl font-light mb-16">
-                Wir kombinieren die neuesten wissenschaftlichen Erkenntnisse in einem synergetischen System, das Körper und Geist in einen Zustand tiefer Regeneration versetzt.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-left max-w-4xl mx-auto">
-                <div class="bg-dark rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v18M8 8h8M4 13h16m-7 6h6"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Lichttherapie</h3>
-                    <p class="font-light opacity-90">Infrarot- und Rotlicht-Wellenlängen dringen tief in das Gewebe ein und stimulieren die Mitochondrien, um die Zellregeneration und die Energieproduktion zu verbessern.</p>
-                </div>
-                <div class="bg-dark rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19c-3.111 0-5.5-2.389-5.5-5.5S5.889 8 9 8s5.5 2.389 5.5 5.5-2.389 5.5-5.5 5.5zM12 3h.01M12 21v-2M3 12h2M21 12h-2m-6-8l-2.828 2.828M15 15l-2.828-2.828M6 6l2.828 2.828M18 18l-2.828-2.828"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Klangtherapie</h3>
-                    <p class="font-light opacity-90">Binaurale Beats und therapeutische Frequenzen synchronisieren Ihre Gehirnwellen und führen zu tiefen Entspannungszuständen, Reduzierung von Stress und verbesserter Fokussierung.</p>
-                </div>
-                <!-- Die multisensorische Synergie ist nun in der allgemeinen Beschreibung oben integriert -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Application Areas Section -->
-    <section id="applications" class="py-16 md:py-24 bg-dark">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Neue Maßstäbe in Gesundheit, Wellness und Performance setzen.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://placehold.co/600x400/333/e0e0e0?text=Gesundheits+Anwendung" alt="Gesundheit & Therapie" class="w-full h-48 md:h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2">Gesundheit & Therapie</h3>
-                        <p class="font-light opacity-90">Ideal für Praxen und Therapiezentren. Fokus auf Stressreduktion, Schmerzmanagement und Verbesserung der Schlafqualität. Bieten Sie Ihren Patienten eine revolutionäre Ergänzung zu herkömmlichen Therapien.</p>
-                    </div>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://placehold.co/600x400/333/e0e0e0?text=Wellness+Anwendung" alt="Wellness & Beauty" class="w-full h-48 md:h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2">Wellness & Beauty</h3>
-                        <p class="font-light opacity-90">Heben Sie Ihr Spa oder Beauty-Institut auf ein neues Level. Bieten Sie exklusive Anwendungen, die Entspannung, Ausgeglichenheit und ein einzigartiges Kundenerlebnis garantieren.</p>
-                    </div>
-                </div>
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://placehold.co/600x400/333/e0e0e0?text=Performance+Anwendung" alt="Performance & Recovery" class="w-full h-48 md:h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl md:text-2xl font-semibold mb-2">Performance & Recovery</h3>
-                        <p class="font-light opacity-90">Perfekt für Fitnessstudios und Biohacking-Zentren. Verbessern Sie die Regeneration nach dem Sport und steigern Sie die mentale Leistungsfähigkeit. Bieten Sie Ihren Mitgliedern einen entscheidenden Vorteil.</p>
-                    </div>
-                </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">Beratung vereinbaren</a>
+                <a href="#technology" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Technologie entdecken</a>
             </div>
         </div>
     </section>
     
-    <!-- Formats Section -->
-    <section id="formats" class="py-16 md:py-24 bg-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Finden Sie das perfekte Format für Ihr Business.</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://placehold.co/800x600/333/e0e0e0?text=Liegen-Variante" alt="Liegen-Variante" class="w-full h-auto">
-                    <div class="p-6 bg-dark">
-                        <h3 class="text-2xl font-semibold mb-2">Liegen- & Betten-Variante</h3>
-                        <p class="font-light opacity-90">Die Liegen-Variante lässt sich nahtlos in bestehende Praxen, Studios und Räume integrieren. Sie bietet maximale Vielseitigkeit und ist ideal für eine breite Palette von Anwendungen und Kunden.</p>
-                    </div>
+    <!-- Business Context Section -->
+    <section class="py-20 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Mehr als Wellness: <br><span class="accent-color">Therapeutische Vorbereitung.</span></h2>
+                    <p class="text-lg opacity-70 mb-6 leading-relaxed">
+                        In der modernen Chiropraktik und Osteopathie ist der Zustand des Nervensystems entscheidend. SOMAVIA unterstützt die Aktivierung des Parasympathikus und kann so zur Lockerung muskulär-faszialer Spannungen vor der Justierung beitragen.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 accent-color shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Unterstützung der HRV-Optimierung (Herzratenvariabilität) 
+                                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5523874/" target="_blank" class="science-link">[Studie]</a></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <svg class="w-6 h-6 accent-color shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            <span>Effiziente Steigerung der Therapiekapazität</span>
+                        </li>
+                    </ul>
                 </div>
-                <div class="rounded-xl overflow-hidden shadow-lg">
-                    <img src="https://placehold.co/800x600/333/e0e0e0?text=MedPod-Variante" alt="Premium-MedPod" class="w-full h-auto">
-                    <div class="p-6 bg-dark">
-                        <h3 class="text-2xl font-semibold mb-2">Premium-MedPod</h3>
-                        <p class="font-light opacity-90">Unser MedPod ist ein High-End-System für das ultimative, immersive Erlebnis. Er bietet maximale Privatsphäre und Exklusivität, perfekt für Luxushotels und Premium-Wellnesszentren, die ein einzigartiges Highlight schaffen wollen.</p>
-                    </div>
+                <div class="glass-card p-10 text-center">
+                    <h3 class="text-5xl font-bold accent-color mb-2">30 min.</h3>
+                    <p class="uppercase tracking-widest text-sm opacity-60 mb-8">für tiefe Neuro-Synchronisation</p>
+                    <p class="text-sm italic opacity-50">"SOMAVIA unterstützt Patienten dabei, in einen Zustand zu finden, in dem der Körper therapeutische Impulse optimal verarbeiten kann."</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why SOMAVIA Section -->
-    <section id="why-somavia" class="py-16 md:py-24 bg-dark">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Ihr Wettbewerbsvorteil im Premium-Segment.</h2>
-            <p class="max-w-3xl mx-auto text-lg md:text-xl font-light mb-16">
-                Entscheiden Sie sich für SOMAVIA und positionieren Sie Ihr Business an der Spitze des Marktes.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="bg-gray-900 rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+    <!-- Technology Deep Dive -->
+    <section id="technology" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-16 section-title uppercase tracking-tighter">Science of Silence</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="glass-card p-12 hover:border-[#00bcd4]/30 transition-all group">
+                    <div class="w-20 h-20 bg-[#1a1a1a] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">Einzigartiges Erlebnis</h3>
-                    <p class="font-light opacity-90">Bieten Sie eine unvergleichliche multisensorische Erfahrung, die Kunden begeistert und langfristig bindet.</p>
+                    <h3 class="text-2xl font-bold mb-4">Photobiomodulation</h3>
+                    <p class="opacity-70 leading-relaxed text-sm">
+                        Spezifische Wellenlängen regen laut Studien die mitochondriale ATP-Produktion an. Dies unterstützt die zelluläre Regeneration und kann Entzündungsprozesse im Gewebe positiv beeinflussen.
+                    </p>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24049929/" target="_blank" class="science-link">Studie: PBM & Mitochondrien</a>
                 </div>
-                <div class="bg-gray-900 rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z"/></svg>
+                <div class="glass-card p-12 hover:border-[#00bcd4]/30 transition-all group">
+                    <div class="w-20 h-20 bg-[#1a1a1a] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V5l12 7-12 7z"></path></svg>
                     </div>
-                    <h3 class="text-2xl font-semibold mb-2">Rentabilität</h3>
-                    <p class="font-light opacity-90">Steigern Sie Ihren Umsatz durch ein Premium-Angebot, das neue Kunden anzieht und flexible Preismodelle ermöglicht.</p>
-                </div>
-                <div class="bg-gray-900 rounded-lg p-8 shadow-lg">
-                    <div class="text-5xl accent-color mb-4">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-12 h-12 mx-auto"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6M9 16h6m2 2h4M3 6h4m0-2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H9a2 2 0 00-2 2v12z"/></svg>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-2">Wissenschaftliche Fundierung</h3>
-                    <p class="font-light opacity-90">Bauen Sie Vertrauen auf mit einem Produkt, dessen Wirksamkeit auf wissenschaftlichen Prinzipien basiert.</p>
+                    <h3 class="text-2xl font-bold mb-4">Neuro-Akustik</h3>
+                    <p class="opacity-70 leading-relaxed text-sm">
+                        Durch neuro-akustische Frequenzen wird das Gehirn sanft in den Alpha- oder Theta-Zustand geführt. Dies trägt nachweislich zur Reduktion von Stresserleben und zur Förderung mentaler Klarheit bei.
+                    </p>
+                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4428073/" target="_blank" class="science-link">Studie: Auditive Stimulation</a>
                 </div>
             </div>
-            <!-- Testimonials Section -->
-            <div class="max-w-4xl mx-auto mt-20">
-                <h3 class="text-2xl font-semibold mb-8 section-title">Was unsere Kunden sagen</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="testimonial-card">
-                        <p class="italic text-gray-400 mb-4">"SOMAVIA hat unser Angebot revolutioniert. Die Kunden sind begeistert und kommen für die einzigartige Erfahrung wieder."</p>
-                        <p class="font-semibold text-right">- Anna Müller, Inhaberin Wellness-Spa</p>
+        </div>
+    </section>
+
+    <!-- Business Applications -->
+    <section id="applications" class="py-24 bg-dark">
+        <div class="container mx-auto px-6 text-center lg:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-bold mb-4 italic uppercase tracking-widest">B2B Integration.</h2>
+                    <p class="opacity-60">Optimieren Sie den Patienten-Outcome und Ihre Wirtschaftlichkeit.</p>
+                </div>
+                <div class="text-[#00bcd4] font-bold text-lg hidden md:block">01 — 03</div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Medizin -->
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579154235828-ac01e5516040?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
                     </div>
-                    <div class="testimonial-card">
-                        <p class="italic text-gray-400 mb-4">"Die Integration war nahtlos, und die Effekte sind spürbar. Eine wertvolle Ergänzung für unsere Praxis."</p>
-                        <p class="font-semibold text-right">- Dr. Klaus Wagner, Therapeut</p>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Medizin & Chiropraktik</h3>
+                        <p class="text-xs opacity-70 leading-relaxed mb-4">Ideale Vorbereitung zur Senkung des Muskeltonus. Eine wertvolle Ergänzung in der Schmerztherapie.</p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Expert Solution</span>
+                    </div>
+                </div>
+                <!-- Biohacking -->
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Biohacking & Spas</h3>
+                        <p class="text-xs opacity-70 leading-relaxed mb-4">High-End-Regeneration für Klienten, die messbare Ergebnisse und maximale Privatsphäre suchen.</p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Premium Experience</span>
+                    </div>
+                </div>
+                <!-- Corporate -->
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Corporate Health</h3>
+                        <p class="text-xs opacity-70 leading-relaxed mb-4">Stress-Prävention und Fokus-Steigerung direkt im Office. Die effizienteste "Deep-Rest"-Lösung.</p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Business Performance</span>
                     </div>
                 </div>
             </div>
@@ -272,74 +227,67 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-gray-900">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-4xl font-semibold mb-12 section-title">Bereit, Ihr Angebot zu revolutionieren?</h2>
-            <div class="max-w-xl mx-auto">
-                <form action="#" method="POST" class="space-y-6 text-left">
-                    <div>
-                        <label for="name" class="block text-sm font-medium mb-1">Name</label>
-                        <input type="text" id="name" name="name" required class="w-full p-3 rounded-md form-input">
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="glass-card p-12 md:p-20 relative z-10 border-[#00bcd4]/20">
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 text-center italic">Ready to Evolve?</h2>
+                <p class="text-center opacity-70 mb-12">Lassen Sie uns gemeinsam analysieren, wie SOMAVIA Ihr Konzept transformieren kann.</p>
+                
+                <form id="contactForm" class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Name</label>
+                        <input type="text" id="userName" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-[#00bcd4] outline-none transition-all">
                     </div>
-                    <div>
-                        <label for="company" class="block text-sm font-medium mb-1">Unternehmen</label>
-                        <input type="text" id="company" name="company" required class="w-full p-3 rounded-md form-input">
+                    <div class="space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Unternehmen</label>
+                        <input type="text" id="userCompany" required class="w-full bg-white/5 border border-white/10 rounded-lg p-4 focus:border-[#00bcd4] outline-none transition-all">
                     </div>
-                    <div>
-                        <label for="email" class="block text-sm font-medium mb-1">E-Mail-Adresse</label>
-                        <input type="email" id="email" name="email" required class="w-full p-3 rounded-md form-input">
-                    </div>
-                    <div>
-                        <label for="interest" class="block text-sm font-medium mb-1">Interesse</label>
-                        <select id="interest" name="interest" class="w-full p-3 rounded-md form-input">
-                            <option value="liegen">Ich interessiere mich für die Liegen-Variante</option>
-                            <option value="medpod">Ich interessiere mich für den MedPod</option>
-                            <option value="beratung">Ich wünsche eine persönliche Beratung</option>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-[10px] uppercase tracking-widest opacity-50 font-bold">Ihr Fokusbereich</label>
+                        <select id="userSector" class="w-full bg-[#1a1a1a] border border-white/10 rounded-lg p-4 focus:border-[#00bcd4] outline-none transition-all">
+                            <option>Chiropraktik / Medizin</option>
+                            <option>Wellness / Spa</option>
+                            <option>Corporate / Biohacking</option>
                         </select>
                     </div>
-                    <div>
-                        <label for="message" class="block text-sm font-medium mb-1">Nachricht</label>
-                        <textarea id="message" name="message" rows="4" class="w-full p-3 rounded-md form-input"></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="inline-block py-3 px-8 rounded-full font-semibold cta-button accent-bg text-black transition-all">Senden</button>
+                    <div class="md:col-span-2 mt-6">
+                        <button type="submit" class="w-full py-5 rounded-full accent-bg text-black font-bold text-lg uppercase tracking-widest cta-button">Jetzt Konzept anfordern</button>
                     </div>
                 </form>
-                <div class="mt-12 text-center">
-                    <p class="text-sm">Oder kontaktieren Sie uns direkt:</p>
-                    <p class="mt-2 font-semibold">E-Mail: <span class="accent-color">info@somavia.de</span></p>
-                    <p class="font-semibold">Telefon: <span class="accent-color">+49 123 456 789</span></p>
-                </div>
             </div>
         </div>
     </section>
 
 </main>
 
-<!-- Footer -->
-<footer class="bg-dark text-gray-400 py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-        <div class="mb-4 md:mb-0">
-            <!-- LOGO EINBINDUNG im Footer -->
-            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo mx-auto md:mx-0">
+<footer class="bg-dark py-12 border-t border-white/5">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50">
+        <div class="text-[10px] opacity-40 flex gap-8 uppercase tracking-widest">
+            <a href="#" class="hover:text-white">Impressum</a>
+            <a href="#" class="hover:text-white">Datenschutz</a>
+            <a href="#" class="hover:text-white">Kontakt: m.weh@chirohealth.de</a>
         </div>
-        <div class="flex flex-wrap justify-center md:justify-end space-x-4 mb-4 md:mb-0 text-sm">
-            <a href="#" class="hover:underline">Impressum</a>
-            <a href="#" class="hover:underline">Datenschutz</a>
-            <a href="#" class="hover:underline">AGB</a>
-        </div>
-        <div class="flex space-x-4 text-lg">
-            <!-- Platzhalter für Social Media Icons -->
-            <a href="#" class="hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zM8 21.5h-3c-.276 0-.5-.224-.5-.5v-12c0-.276.224-.5.5-.5h3c.276 0 .5.224.5.5v12c0 .276-.224.5-.5.5zM6.5 7.5c-.828 0-1.5-.672-1.5-1.5S5.672 4.5 6.5 4.5 8 5.172 8 6s-.672 1.5-1.5 1.5zM21.5 21.5h-3c-.276 0-.5-.224-.5-.5v-6c0-1.656-1.344-3-3-3s-3 1.344-3 3v6c0 .276-.224.5-.5.5h-3c-.276 0-.5-.224-.5-.5v-12c0-.276.224-.5.5-.5h3c.276 0 .5.224.5.5v2.887c.753-1.109 2.016-1.887 3.5-1.887 3.03 0 5.5 2.47 5.5 5.5v6c0 .276-.224.5-.5.5z"/></svg>
-            </a>
-            <a href="#" class="hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.772 1.915 4.904 4.85.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.132 2.934-1.652 4.686-4.904 4.85-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.772-1.915-4.904-4.85-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.132-2.934 1.652-4.686 4.904-4.85 1.266-.058 1.646-.07 4.85-.07zM12 0c-3.695 0-4.17.014-5.65.083-3.829.175-6.17 2.454-6.345 6.345-.069 1.48-.083 1.955-.083 5.65s.014 4.17.083 5.65c.175 3.829 2.454 6.17 6.345 6.345 1.48.069 1.955.083 5.65.083s4.17-.014 5.65-.083c3.829-.175 6.17-2.454 6.345-6.345.069-1.48.083-1.955.083-5.65s-.014-4.17-.083-5.65c-.175-3.829-2.454-6.17-6.345-6.345-1.48-.069-1.955-.083-5.65-.083zM12 5.835c-3.411 0-6.165 2.754-6.165 6.165s2.754 6.165 6.165 6.165 6.165-2.754 6.165-6.165-2.754-6.165-6.165-6.165zM12 16.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5zM17.5 7.5c.828 0 1.5-.672 1.5-1.5s-.672-1.5-1.5-1.5-1.5.672-1.5 1.5.672 1.5 1.5 1.5z"/></svg>
-            </a>
+        <div class="text-[10px] opacity-30">
+            &copy; 2026 SOMAVIA. All Rights Reserved.
         </div>
     </div>
 </footer>
 
+<script>
+    // Kontaktformular Logik
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('userName').value;
+        const company = document.getElementById('userCompany').value;
+        const sector = document.getElementById('userSector').value;
+        
+        const subject = encodeURIComponent("SOMAVIA Business Anfrage: " + company);
+        const body = encodeURIComponent("Hallo Herr Weh,\n\nich interessiere mich für ein SOMAVIA Konzept.\n\nName: " + name + "\nUnternehmen: " + company + "\nBereich: " + sector + "\n\nBitte kontaktieren Sie mich für ein Beratungsgespräch.");
+        
+        window.location.href = "mailto:m.weh@chirohealth.de?subject=" + subject + "&body=" + body;
+    });
+</script>
+
 </body>
 </html>
-
