@@ -302,6 +302,16 @@
             display: block;
         }
 
+        .subpage-card {
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .subpage-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 188, 212, 0.35);
+            box-shadow: 0 10px 30px rgba(0, 188, 212, 0.12);
+        }
+
         input[type="checkbox"] {
             accent-color: var(--accent);
         }
@@ -320,6 +330,7 @@
             <a href="#technology" class="nav-link">Technologie</a>
             <a href="#applications" class="nav-link">Einsatz</a>
             <a href="#for-people" class="nav-link">Für Menschen</a>
+            <a href="#subpages" class="nav-link">Mehr erfahren</a>
             <a href="#faq" class="nav-link">FAQ</a>
             <a href="#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anfrage</a>
         </nav>
@@ -358,7 +369,7 @@
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">SOMAVIA anfragen</a>
-                <a href="#for-people" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Ich möchte das erleben</a>
+                <a href="#subpages" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Mehr erfahren</a>
             </div>
         </div>
     </section>
@@ -582,7 +593,50 @@
         </div>
     </section>
 
-    <section id="why-somavia" class="py-24 bg-[#121212] border-y border-white/5">
+    <section id="subpages" class="py-24 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center mb-14">
+                <span class="mini-kicker mb-4 block">Mehr über SOMAVIA</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Die wichtigsten Themen im Überblick</h2>
+                <p class="text-lg opacity-68 leading-relaxed max-w-3xl mx-auto">
+                    Hier finden Sie die wichtigsten Einstiegsseiten zu SOMAVIA —
+                    für allgemeines Verständnis, für therapeutische Standorte und für Menschen,
+                    die SOMAVIA selbst erleben möchten.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="was-ist-somavia.html" class="glass-card p-8 block subpage-card">
+                    <span class="mini-kicker mb-3 block">Grundlagen</span>
+                    <h3 class="text-2xl font-bold mb-3">Was ist SOMAVIA?</h3>
+                    <p class="text-sm opacity-72 leading-relaxed mb-5">
+                        Die kompakte Erklärung des Konzepts: Licht, Klang, Ruhe, Atmosphäre und der 30-Minuten-Rahmen.
+                    </p>
+                    <span class="accent-color font-semibold text-sm">Seite öffnen →</span>
+                </a>
+
+                <a href="somavia-fuer-therapeuten.html" class="glass-card p-8 block subpage-card">
+                    <span class="mini-kicker mb-3 block">Praxen & Zentren</span>
+                    <h3 class="text-2xl font-bold mb-3">SOMAVIA für Therapeuten</h3>
+                    <p class="text-sm opacity-72 leading-relaxed mb-5">
+                        Für Praxen, Therapiezentren und Gesundheitsstandorte, die ihr Konzept hochwertig erweitern möchten.
+                    </p>
+                    <span class="accent-color font-semibold text-sm">Seite öffnen →</span>
+                </a>
+
+                <a href="somavia-erleben.html" class="glass-card p-8 block subpage-card">
+                    <span class="mini-kicker mb-3 block">Für Menschen</span>
+                    <h3 class="text-2xl font-bold mb-3">SOMAVIA erleben</h3>
+                    <p class="text-sm opacity-72 leading-relaxed mb-5">
+                        Für Menschen, die SOMAVIA selbst erleben oder ihrem Therapeuten davon erzählen möchten.
+                    </p>
+                    <span class="accent-color font-semibold text-sm">Seite öffnen →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-somavia" class="py-24 bg-dark">
         <div class="container mx-auto px-6">
             <div class="max-w-5xl mx-auto text-center mb-14">
                 <span class="mini-kicker mb-4 block">Warum SOMAVIA</span>
@@ -626,7 +680,7 @@
         </div>
     </section>
 
-    <section id="faq" class="py-24 bg-dark border-y border-white/5">
+    <section id="faq" class="py-24 bg-[#121212] border-y border-white/5">
         <div class="container mx-auto px-6 max-w-4xl">
             <div class="text-center mb-14">
                 <span class="mini-kicker mb-4 block">FAQ</span>
@@ -805,9 +859,11 @@
         </a>
 
         <div class="text-[10px] opacity-40 flex flex-wrap justify-center gap-6 uppercase tracking-widest">
+            <a href="was-ist-somavia.html" class="hover:text-white">Was ist SOMAVIA?</a>
+            <a href="somavia-fuer-therapeuten.html" class="hover:text-white">Für Therapeuten</a>
+            <a href="somavia-erleben.html" class="hover:text-white">SOMAVIA erleben</a>
             <a href="impressum.html" class="hover:text-white">Impressum</a>
             <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
-            <a href="mailto:m.weh@chirohealth.de" class="hover:text-white">Kontakt: m.weh@chirohealth.de</a>
         </div>
 
         <div class="text-[10px] opacity-30">
