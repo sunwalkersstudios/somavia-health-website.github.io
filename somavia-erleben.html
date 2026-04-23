@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SOMAVIA erleben | Multisensorische Regeneration für Menschen</title>
+    <meta name="description" content="SOMAVIA erleben: ein multisensorisches Regenerationskonzept mit Licht, Klang, Ruhe und Atmosphäre für Menschen, die tiefe Entlastung und einen besonderen Moment von Regeneration suchen." />
+    <link rel="canonical" href="https://somavia.health/somavia-erleben.html" />
+    <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://somavia.health/somavia-erleben.html" />
+    <meta property="og:title" content="SOMAVIA erleben | Multisensorische Regeneration für Menschen" />
+    <meta property="og:description" content="SOMAVIA verbindet Licht, Klang, Ruhe und Atmosphäre zu einem Erlebnis, das Menschen spüren und weiterempfehlen möchten." />
+    <meta property="og:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta property="og:site_name" content="SOMAVIA" />
+    <meta property="og:locale" content="de_DE" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOMAVIA erleben | Multisensorische Regeneration für Menschen" />
+    <meta name="twitter:description" content="Ein multisensorisches Regenerationserlebnis mit Licht, Klang, Ruhe und Atmosphäre." />
+    <meta name="twitter:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://somavia.health/somavia-erleben.html#article",
+          "headline": "SOMAVIA erleben",
+          "description": "SOMAVIA ist ein multisensorisches Regenerationskonzept für Menschen, die Licht, Klang, Ruhe und Atmosphäre in einem geführten Erlebnis erleben möchten.",
+          "inLanguage": "de-DE",
+          "mainEntityOfPage": "https://somavia.health/somavia-erleben.html",
+          "publisher": {
+            "@type": "Organization",
+            "name": "SOMAVIA",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://somavia.health/assets/SOMAVIA_Icon.png"
+            }
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Startseite",
+              "item": "https://somavia.health/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "SOMAVIA erleben",
+              "item": "https://somavia.health/somavia-erleben.html"
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --accent: #00bcd4;
+            --accent-hover: #00acc1;
+            --bg-main: #1a1a1a;
+            --bg-dark: #121212;
+            --text-main: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
+
+        .header-logo {
+            filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.25));
+            height: 45px;
+            width: auto;
+        }
+
+        .accent-color { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
+        .bg-dark { background-color: var(--bg-dark); }
+
+        .nav-link {
+            transition: color 0.3s ease, opacity 0.3s ease;
+            opacity: 0.85;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.45);
+            background-color: var(--accent-hover);
+        }
+
+        .glass-card {
+            background: rgba(44, 44, 44, 0.55);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1.25rem auto 0;
+            border-radius: 999px;
+        }
+
+        .hero-overlay {
+            background:
+                linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.18), rgba(18,18,18,0.92)),
+                radial-gradient(circle at center, rgba(0,188,212,0.10), transparent 45%);
+        }
+
+        .mini-kicker {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            opacity: 0.9;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            color: rgba(224,224,224,0.88);
+        }
+
+        .content-block h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+        }
+
+        .content-block p {
+            opacity: 0.78;
+            line-height: 1.9;
+            margin-bottom: 1rem;
+        }
+
+        .content-block ul {
+            opacity: 0.82;
+            line-height: 1.8;
+            padding-left: 1.2rem;
+            list-style: disc;
+        }
+
+        .step-number {
+            color: var(--accent);
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+<header class="bg-dark/90 backdrop-blur-md p-5 fixed top-0 w-full z-50 border-b border-white/5">
+    <div class="container mx-auto flex justify-between items-center gap-6">
+        <a href="index.html">
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
+        </a>
+
+        <nav class="hidden lg:flex space-x-8 text-xs font-medium tracking-widest uppercase">
+            <a href="index.html" class="nav-link">Startseite</a>
+            <a href="was-ist-somavia.html" class="nav-link">Was ist SOMAVIA?</a>
+            <a href="somavia-fuer-therapeuten.html" class="nav-link">Für Therapeuten</a>
+            <a href="index.html#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anfrage</a>
+        </nav>
+    </div>
+</header>
+
+<main class="pt-20">
+    <section class="relative min-h-[72vh] flex items-center justify-center text-center p-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=2000" alt="SOMAVIA erleben" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl">
+            <span class="mini-kicker mb-6 block">Für Menschen, die SOMAVIA erleben möchten</span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                SOMAVIA <span class="accent-color">erleben</span>
+            </h1>
+            <p class="text-lg md:text-2xl font-light mb-8 max-w-4xl mx-auto opacity-85 leading-relaxed">
+                Ein Erlebnis aus Licht, Klang, Ruhe und Atmosphäre —
+                für Menschen, die einen besonderen Moment von Entlastung und moderner Regeneration suchen.
+            </p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="pill">Licht</span>
+                <span class="pill">Klang</span>
+                <span class="pill">Ruhe</span>
+                <span class="pill">Atmosphäre</span>
+                <span class="pill">30 Minuten</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card p-8 md:p-12 content-block">
+                <h2>Wie fühlt sich SOMAVIA an?</h2>
+                <p>
+                    SOMAVIA ist nicht dafür gemacht, laut oder spektakulär zu sein.
+                    Die Stärke des Konzepts liegt vielmehr darin, dass viele Menschen es als ruhig,
+                    klar und überraschend tief empfinden.
+                </p>
+                <p>
+                    Statt noch mehr Reize zu erzeugen, entsteht ein bewusst gestalteter Raum,
+                    in dem sich Menschen für eine bestimmte Zeit aus dem Tempo des Alltags herausnehmen können.
+                    Genau das macht SOMAVIA zu einem Erlebnis, das viele nicht nur verstehen,
+                    sondern tatsächlich spüren.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="text-center mb-14">
+                <span class="mini-kicker mb-4 block">So kann es erlebt werden</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 section-title">Der Weg in das Erlebnis</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 content-block">
+                    <div class="step-number mb-4">01</div>
+                    <h2>Ankommen</h2>
+                    <p>
+                        Der erste Schritt ist das bewusste Herausgehen aus dem Alltag.
+                        Schon die Atmosphäre soll vermitteln: Hier beginnt ein anderer Zustand.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 content-block">
+                    <div class="step-number mb-4">02</div>
+                    <h2>Loslassen</h2>
+                    <p>
+                        Während der Anwendung greifen Licht, Klang und Ruhe ineinander.
+                        Das Erleben wirkt nicht technisch, sondern geführt und stimmig.
+                    </p>
+                </div>
+
+                <div class="glass-card p-8 content-block">
+                    <div class="step-number mb-4">03</div>
+                    <h2>Mitnehmen</h2>
+                    <p>
+                        Viele besondere Erlebnisse enden nicht in dem Moment, in dem sie vorbei sind.
+                        Genau daraus kann auch der Wunsch entstehen, SOMAVIA weiterzuempfehlen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 content-block">
+                    <h2>Für wen ist SOMAVIA interessant?</h2>
+                    <p>
+                        SOMAVIA richtet sich an Menschen, die nicht einfach irgendeine Entspannungsanwendung suchen,
+                        sondern ein bewusst gestaltetes Erlebnis von Ruhe, Entlastung und moderner Regeneration.
+                    </p>
+                    <ul>
+                        <li>Menschen mit hohem Alltagsdruck</li>
+                        <li>Menschen mit dem Wunsch nach tiefer Ruhe</li>
+                        <li>Menschen, die hochwertige Gesundheitskonzepte schätzen</li>
+                        <li>Menschen, die Neues nicht nur sehen, sondern fühlen möchten</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card p-8 content-block">
+                    <h2>Wie lange dauert SOMAVIA?</h2>
+                    <p>
+                        Eine SOMAVIA-Anwendung dauert in der Regel etwa 30 Minuten.
+                    </p>
+                    <p>
+                        Dieser zeitliche Rahmen ist bewusst gewählt:
+                        lang genug, um wirklich in einen anderen Zustand zu finden,
+                        und zugleich gut in einen modernen Tagesablauf integrierbar.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card p-8 md:p-12 content-block">
+                <h2>Wo kann man SOMAVIA erleben?</h2>
+                <p>
+                    SOMAVIA befindet sich im Aufbau. Ziel ist es, das Konzept an passenden Standorten erlebbar zu machen —
+                    insbesondere dort, wo Menschen hochwertige Regeneration, Ruhe und bewusste Gesundheitskonzepte suchen.
+                </p>
+                <p>
+                    Wenn Sie SOMAVIA gern selbst erleben möchten, können Sie uns Ihre Region mitteilen.
+                    Ebenso können Sie Ihren Therapeuten, Ihr Gesundheitszentrum oder Ihren Lieblingsort für Regeneration
+                    auf SOMAVIA aufmerksam machen.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card p-8 md:p-12 content-block">
+                <h2>Sie möchten SOMAVIA Ihrem Therapeuten empfehlen?</h2>
+                <p>
+                    Genau dafür ist diese Seite auch gedacht.
+                    Manche Konzepte entdeckt man und merkt sofort:
+                    Das würde ich gern an einem Ort erleben, dem ich vertraue.
+                </p>
+                <p>
+                    Ein einfacher Vorschlag könnte sein:
+                </p>
+                <p class="italic opacity-90">
+                    „Ich habe SOMAVIA entdeckt. Das wirkt wie ein sehr hochwertiges Regenerationskonzept.
+                    Vielleicht wäre das auch spannend für Ihre Praxis.“
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-dark">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card p-8 md:p-12 text-center">
+                <span class="mini-kicker mb-4 block">Interesse an SOMAVIA</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Sie möchten SOMAVIA selbst erleben oder an einen Standort bringen?
+                </h2>
+                <p class="opacity-72 leading-relaxed max-w-3xl mx-auto mb-8">
+                    Teilen Sie uns gern mit, woher Sie kommen oder welchen Standort Sie sich für SOMAVIA vorstellen.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="index.html#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">Jetzt Kontakt aufnehmen</a>
+                    <a href="somavia-fuer-therapeuten.html" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Für Therapeuten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark py-12 border-t border-white/5">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <a href="index.html">
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
+        </a>
+
+        <div class="text-[10px] opacity-40 flex flex-wrap justify-center gap-6 uppercase tracking-widest">
+            <a href="impressum.html" class="hover:text-white">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+            <a href="mailto:m.weh@chirohealth.de" class="hover:text-white">Kontakt: m.weh@chirohealth.de</a>
+        </div>
+
+        <div class="text-[10px] opacity-30">
+            &copy; 2026 SOMAVIA. All Rights Reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
