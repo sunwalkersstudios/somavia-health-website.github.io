@@ -18,8 +18,6 @@
             --bg-main: #1a1a1a;
             --bg-dark: #121212;
             --text-main: #e0e0e0;
-            --text-soft: rgba(224, 224, 224, 0.75);
-            --text-muted: rgba(224, 224, 224, 0.5);
         }
 
         html {
@@ -30,6 +28,10 @@
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-main);
             color: var(--text-main);
+        }
+
+        .hidden {
+            display: none;
         }
 
         .header-logo {
@@ -123,7 +125,7 @@
 
         .hero-overlay {
             background:
-                linear-gradient(to bottom, rgba(18,18,18,0.8), rgba(18,18,18,0.18), rgba(18,18,18,0.9)),
+                linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.18), rgba(18,18,18,0.92)),
                 radial-gradient(circle at center, rgba(0,188,212,0.10), transparent 45%);
         }
 
@@ -164,6 +166,11 @@
             color: var(--text-main);
         }
 
+        .input-field::placeholder,
+        .textarea-field::placeholder {
+            color: rgba(224,224,224,0.38);
+        }
+
         .input-field:focus,
         .textarea-field:focus,
         .select-field:focus {
@@ -198,6 +205,36 @@
             background: radial-gradient(circle at top right, rgba(0,188,212,0.12), transparent 35%);
             pointer-events: none;
         }
+
+        .status-box {
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .success-box {
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            background: rgba(16, 185, 129, 0.12);
+            color: #bbf7d0;
+        }
+
+        .error-box {
+            border: 1px solid rgba(248, 113, 113, 0.25);
+            background: rgba(239, 68, 68, 0.12);
+            color: #fecaca;
+        }
+
+        .field-error {
+            font-size: 0.75rem;
+            color: #fca5a5;
+            min-height: 1rem;
+            display: block;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--accent);
+        }
     </style>
 </head>
 <body>
@@ -213,7 +250,7 @@
             <a href="#technology" class="nav-link" onclick="showPage('home')">Technologie</a>
             <a href="#applications" class="nav-link" onclick="showPage('home')">Einsatz</a>
             <a href="#for-people" class="nav-link" onclick="showPage('home')">Für Menschen</a>
-            <a href="#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anfrage</a>
+            <a href="#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black" onclick="showPage('home')">Anfrage</a>
         </nav>
     </div>
 </header>
@@ -221,7 +258,6 @@
 <div id="home-page">
     <main class="pt-20">
 
-        <!-- HERO -->
         <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-6 overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&q=80&w=2000" alt="SOMAVIA Regenerationsumgebung" class="w-full h-full object-cover opacity-30" />
@@ -238,7 +274,7 @@
 
                 <p class="text-lg md:text-2xl font-light mb-8 max-w-4xl mx-auto opacity-85 leading-relaxed">
                     SOMAVIA verbindet Licht, Klang, Ruhe und Atmosphäre zu einem regenerativen Erlebnis,
-                    das Menschen emotional berührt — und für Therapiezentren, Praxen und hochwertige Gesundheitskonzepte
+                    das Menschen emotional berührt — und für Praxen, Therapiezentren und hochwertige Gesundheitskonzepte
                     zu einem echten Unterschied werden kann.
                 </p>
 
@@ -251,17 +287,12 @@
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">
-                        SOMAVIA anfragen
-                    </a>
-                    <a href="#for-people" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">
-                        Ich möchte das erleben
-                    </a>
+                    <a href="#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">SOMAVIA anfragen</a>
+                    <a href="#for-people" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Ich möchte das erleben</a>
                 </div>
             </div>
         </section>
 
-        <!-- EXPERIENCE -->
         <section id="experience" class="py-24 bg-[#121212] border-y border-white/5">
             <div class="container mx-auto px-6">
                 <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -274,13 +305,13 @@
                         </h2>
 
                         <p class="text-lg opacity-75 mb-6 leading-relaxed">
-                            Viele Menschen sind nicht nur erschöpft — sie sind dauerhaft unter Spannung.
+                            Viele Menschen sind nicht nur müde — sie sind dauerhaft unter Spannung.
                             SOMAVIA schafft einen Raum, in dem Reize reduziert und gleichzeitig gezielt geführt werden.
                             So entsteht ein Erlebnis, das nicht laut ist, sondern tief.
                         </p>
 
                         <p class="text-lg opacity-75 mb-8 leading-relaxed">
-                            Genau das macht es so besonders für Praxen und Zentren:
+                            Genau das macht es so besonders für Standorte:
                             Menschen erleben nicht einfach eine Anwendung — sie erleben einen Unterschied,
                             den sie weitererzählen wollen.
                         </p>
@@ -315,7 +346,6 @@
             </div>
         </section>
 
-        <!-- TECHNOLOGY -->
         <section id="technology" class="py-24">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-5xl font-bold mb-4 section-title uppercase tracking-tighter">Science of Silence</h2>
@@ -366,7 +396,6 @@
             </div>
         </section>
 
-        <!-- APPLICATIONS -->
         <section id="applications" class="py-24 bg-dark">
             <div class="container mx-auto px-6 text-center lg:text-left">
                 <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
@@ -427,7 +456,6 @@
             </div>
         </section>
 
-        <!-- FOR PEOPLE -->
         <section id="for-people" class="py-24">
             <div class="container mx-auto px-6">
                 <div class="max-w-5xl mx-auto text-center mb-14">
@@ -484,14 +512,11 @@
             </div>
         </section>
 
-        <!-- WHY SOMAVIA -->
         <section id="why-somavia" class="py-24 bg-[#121212] border-y border-white/5">
             <div class="container mx-auto px-6">
                 <div class="max-w-5xl mx-auto text-center mb-14">
                     <span class="mini-kicker mb-4 block">Warum SOMAVIA</span>
-                    <h2 class="text-3xl md:text-5xl font-bold mb-6">
-                        Was SOMAVIA besonders macht
-                    </h2>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Was SOMAVIA besonders macht</h2>
                     <p class="text-lg opacity-68 leading-relaxed max-w-3xl mx-auto">
                         Nicht ein einzelnes Gerät. Nicht nur ein schöner Raum.
                         Sondern ein stimmig entwickeltes System, das Technologie, Atmosphäre und emotionale Wirkung verbindet.
@@ -531,7 +556,6 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact" class="py-24 relative overflow-hidden">
             <div class="container mx-auto px-6 max-w-5xl">
                 <div class="glass-card p-10 md:p-16 relative z-10 border-[#00bcd4]/20">
@@ -544,10 +568,27 @@
                         </p>
                     </div>
 
-                    <form id="contactForm" class="grid md:grid-cols-2 gap-6">
+                    <div data-fs-success class="hidden status-box success-box mb-6">
+                        Vielen Dank. Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns so bald wie möglich zurück.
+                    </div>
+
+                    <div data-fs-error class="hidden status-box error-box mb-6">
+                        Leider konnte Ihre Anfrage gerade nicht gesendet werden. Bitte versuchen Sie es erneut.
+                    </div>
+
+                    <form
+                        id="contactForm"
+                        action="https://formspree.io/f/xbdqpeoa"
+                        method="POST"
+                        class="grid md:grid-cols-2 gap-6"
+                    >
+                        <input type="hidden" name="_subject" value="Neue SOMAVIA Anfrage über somavia.health" />
+                        <input type="hidden" name="_language" value="de" />
+                        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+
                         <div class="space-y-2">
                             <label for="userType" class="form-label">Ich bin</label>
-                            <select id="userType" class="select-field" required>
+                            <select id="userType" name="Ich bin" class="select-field" data-fs-field required>
                                 <option value="">Bitte auswählen</option>
                                 <option value="Therapeut / Praxis">Therapeut / Praxis</option>
                                 <option value="Spa / Gesundheitszentrum">Spa / Gesundheitszentrum</option>
@@ -555,59 +596,81 @@
                                 <option value="Interessierte Privatperson">Interessierte Privatperson</option>
                                 <option value="Sonstiges">Sonstiges</option>
                             </select>
+                            <span data-fs-error="Ich bin" class="field-error"></span>
                         </div>
 
                         <div class="space-y-2">
                             <label for="userFocus" class="form-label">Mein Interesse</label>
-                            <select id="userFocus" class="select-field" required>
+                            <select id="userFocus" name="Interesse" class="select-field" data-fs-field required>
                                 <option value="">Bitte auswählen</option>
                                 <option value="SOMAVIA für meinen Standort">SOMAVIA für meinen Standort</option>
                                 <option value="Ich möchte SOMAVIA vor Ort erleben">Ich möchte SOMAVIA vor Ort erleben</option>
                                 <option value="Kooperation / Partnerschaft">Kooperation / Partnerschaft</option>
                                 <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
                             </select>
+                            <span data-fs-error="Interesse" class="field-error"></span>
                         </div>
 
                         <div class="space-y-2">
                             <label for="userName" class="form-label">Name</label>
-                            <input type="text" id="userName" class="input-field" required />
+                            <input type="text" id="userName" name="Name" class="input-field" data-fs-field required />
+                            <span data-fs-error="Name" class="field-error"></span>
                         </div>
 
                         <div class="space-y-2">
                             <label for="userCompany" class="form-label">Praxis / Unternehmen / Ort</label>
-                            <input type="text" id="userCompany" class="input-field" placeholder="Optional bei Privatpersonen" />
+                            <input type="text" id="userCompany" name="Praxis / Unternehmen / Ort" class="input-field" data-fs-field placeholder="Optional bei Privatpersonen" />
+                            <span data-fs-error="Praxis / Unternehmen / Ort" class="field-error"></span>
                         </div>
 
                         <div class="space-y-2">
                             <label for="userEmail" class="form-label">E-Mail</label>
-                            <input type="email" id="userEmail" class="input-field" required />
+                            <input type="email" id="userEmail" name="email" class="input-field" data-fs-field required />
+                            <span data-fs-error="email" class="field-error"></span>
                         </div>
 
                         <div class="space-y-2">
                             <label for="userPhone" class="form-label">Telefon</label>
-                            <input type="tel" id="userPhone" class="input-field" placeholder="Optional" />
+                            <input type="tel" id="userPhone" name="Telefon" class="input-field" data-fs-field />
+                            <span data-fs-error="Telefon" class="field-error"></span>
                         </div>
 
                         <div class="md:col-span-2 space-y-2">
                             <label for="userLocation" class="form-label">Ort / Region</label>
-                            <input type="text" id="userLocation" class="input-field" placeholder="z. B. Hannover, Bad Nenndorf, Hamburg" />
+                            <input type="text" id="userLocation" name="Ort / Region" class="input-field" data-fs-field placeholder="z. B. Hannover, Bad Nenndorf, Hamburg" />
+                            <span data-fs-error="Ort / Region" class="field-error"></span>
                         </div>
 
                         <div class="md:col-span-2 space-y-2">
                             <label for="userMessage" class="form-label">Nachricht</label>
-                            <textarea id="userMessage" rows="6" class="textarea-field" placeholder="Worum geht es Ihnen? Möchten Sie SOMAVIA für Ihren Standort anfragen oder wünschen Sie sich einen Anbieter in Ihrer Nähe?"></textarea>
+                            <textarea
+                                id="userMessage"
+                                name="message"
+                                rows="6"
+                                class="textarea-field"
+                                data-fs-field
+                                placeholder="Worum geht es Ihnen? Möchten Sie SOMAVIA für Ihren Standort anfragen oder wünschen Sie sich einen Anbieter in Ihrer Nähe?"
+                                required
+                            ></textarea>
+                            <span data-fs-error="message" class="field-error"></span>
+                        </div>
+
+                        <div class="md:col-span-2 flex items-start gap-3 text-sm opacity-75 leading-relaxed">
+                            <input type="checkbox" id="privacyConsent" required class="mt-1 shrink-0" />
+                            <label for="privacyConsent">
+                                Ich habe die
+                                <a href="javascript:void(0)" onclick="showPage('datenschutz')" class="accent-color underline">Datenschutzerklärung</a>
+                                gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage einverstanden.
+                            </label>
                         </div>
 
                         <div class="md:col-span-2">
-                            <div class="note-box p-4 mb-6">
-                                <p class="text-sm opacity-75 leading-relaxed">
-                                    Dieses Formular öffnet aktuell Ihr E-Mail-Programm.
-                                    Für eine noch professionellere Direktübermittlung auf GitHub Pages können Sie später z. B. Formspree oder FormSubmit integrieren.
-                                </p>
-                            </div>
-
-                            <button type="submit" class="w-full py-5 rounded-full accent-bg text-black font-bold text-lg uppercase tracking-widest cta-button">
-                                Anfrage vorbereiten
+                            <button
+                                type="submit"
+                                data-fs-submit-btn
+                                class="w-full py-5 rounded-full accent-bg text-black font-bold text-lg uppercase tracking-widest cta-button"
+                            >
+                                Anfrage senden
                             </button>
                         </div>
                     </form>
@@ -617,7 +680,6 @@
     </main>
 </div>
 
-<!-- IMPRESSUM -->
 <div id="impressum-page" class="hidden-section pt-32 pb-20">
     <div class="container mx-auto px-6 max-w-4xl">
         <button onclick="showPage('home')" class="mb-10 text-xs uppercase tracking-widest accent-color border border-[#00bcd4]/30 px-6 py-2 rounded-full hover:bg-[#00bcd4] hover:text-black transition-all">
@@ -657,7 +719,6 @@
     </div>
 </div>
 
-<!-- DATENSCHUTZ -->
 <div id="datenschutz-page" class="hidden-section pt-32 pb-20">
     <div class="container mx-auto px-6 max-w-4xl">
         <button onclick="showPage('home')" class="mb-10 text-xs uppercase tracking-widest accent-color border border-[#00bcd4]/30 px-6 py-2 rounded-full hover:bg-[#00bcd4] hover:text-black transition-all">
@@ -683,16 +744,14 @@
             <p>
                 <strong>Wie erfassen wir Ihre Daten?</strong><br />
                 Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen.
-                Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.
-                Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst.
+                Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben. Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst.
                 Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs).
             </p>
 
             <h2>3. Kontaktformular</h2>
             <p>
-                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular
-                inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall
-                von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+                Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+                Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
             </p>
 
             <h2>4. Hosting via GitHub Pages</h2>
@@ -740,58 +799,39 @@
         window.scrollTo(0, 0);
     }
 
-    const contactForm = document.getElementById('contactForm');
+    window.formspree = window.formspree || function () {
+        (formspree.q = formspree.q || []).push(arguments);
+    };
 
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
+    formspree('initForm', {
+        formElement: '#contactForm',
+        formId: 'xbdqpeoa',
+        onSuccess: function () {
+            const successBox = document.querySelector('[data-fs-success]');
+            const errorBox = document.querySelector('[data-fs-error]');
+            const form = document.getElementById('contactForm');
 
-        const userType = document.getElementById('userType').value.trim();
-        const userFocus = document.getElementById('userFocus').value.trim();
-        const userName = document.getElementById('userName').value.trim();
-        const userCompany = document.getElementById('userCompany').value.trim();
-        const userEmail = document.getElementById('userEmail').value.trim();
-        const userPhone = document.getElementById('userPhone').value.trim();
-        const userLocation = document.getElementById('userLocation').value.trim();
-        const userMessage = document.getElementById('userMessage').value.trim();
+            if (errorBox) errorBox.classList.add('hidden');
+            if (successBox) {
+                successBox.classList.remove('hidden');
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
 
-        const subject = encodeURIComponent(`SOMAVIA Anfrage | ${userFocus || 'Allgemein'} | ${userName}`);
+            if (form) form.reset();
+        },
+        onError: function () {
+            const successBox = document.querySelector('[data-fs-success]');
+            const errorBox = document.querySelector('[data-fs-error]');
 
-        const body = encodeURIComponent(
-`Hallo Herr Weh,
-
-ich interessiere mich für SOMAVIA.
-
-Ich bin:
-${userType || '-'}
-
-Mein Interesse:
-${userFocus || '-'}
-
-Name:
-${userName || '-'}
-
-Praxis / Unternehmen / Ort:
-${userCompany || '-'}
-
-E-Mail:
-${userEmail || '-'}
-
-Telefon:
-${userPhone || '-'}
-
-Ort / Region:
-${userLocation || '-'}
-
-Nachricht:
-${userMessage || '-'}
-
-Mit freundlichen Grüßen
-${userName || ''}`
-        );
-
-        window.location.href = `mailto:m.weh@chirohealth.de?subject=${subject}&body=${body}`;
+            if (successBox) successBox.classList.add('hidden');
+            if (errorBox) {
+                errorBox.classList.remove('hidden');
+                errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
     });
 </script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
