@@ -1,196 +1,855 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre</title>
+    <title>SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre</title>
+    <meta name="description" content="SOMAVIA ist ein multisensorisches Regenerationskonzept für Praxen, Therapiezentren und Menschen, die tiefe Ruhe, Entlastung und moderne Regeneration erleben möchten." />
+    <link rel="canonical" href="https://somavia.health/" />
+    <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png" />
 
-<meta name="description" content="SOMAVIA ist ein multisensorisches Regenerationskonzept für Praxen, Therapiezentren und Menschen, die tiefe Ruhe, Entlastung und moderne Regeneration erleben möchten." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://somavia.health/" />
+    <meta property="og:title" content="SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre" />
+    <meta property="og:description" content="SOMAVIA verbindet Licht, Klang, Ruhe und Atmosphäre zu einem multisensorischen Regenerationserlebnis für Praxen, Therapiezentren und hochwertige Gesundheitskonzepte." />
+    <meta property="og:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta property="og:site_name" content="SOMAVIA" />
+    <meta property="og:locale" content="de_DE" />
 
-<link rel="canonical" href="https://somavia.health/">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre" />
+    <meta name="twitter:description" content="Multisensorische Regeneration mit Licht, Klang, Ruhe und Atmosphäre für Praxen, Therapiezentren und interessierte Menschen." />
+    <meta name="twitter:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
 
-<link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Open Graph -->
-<meta property="og:title" content="SOMAVIA | Multisensorische Regeneration">
-<meta property="og:description" content="Ein Zustand, den man spürt – und weiterempfehlen möchte.">
-<meta property="og:image" content="https://somavia.health/assets/SOMAVIA_Icon.png">
-<meta property="og:url" content="https://somavia.health/">
-<meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://somavia.health/#organization",
+          "name": "SOMAVIA",
+          "url": "https://somavia.health/",
+          "logo": "https://somavia.health/assets/SOMAVIA_Icon.png",
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "email": "m.weh@chirohealth.de",
+            "telephone": "+49-5723-798701",
+            "areaServed": "DE",
+            "availableLanguage": ["de"]
+          }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://somavia.health/#website",
+          "url": "https://somavia.health/",
+          "name": "SOMAVIA",
+          "publisher": {
+            "@id": "https://somavia.health/#organization"
+          },
+          "inLanguage": "de-DE"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://somavia.health/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Was ist SOMAVIA?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SOMAVIA ist ein multisensorisches Regenerationskonzept, das Licht, Klang, Ruhe und Atmosphäre in einem geführten Erlebnis verbindet."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Für wen ist SOMAVIA gedacht?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "SOMAVIA richtet sich an Praxen, Therapiezentren, Spa- und Gesundheitskonzepte sowie an Menschen, die tiefe Ruhe, Entlastung und moderne Regeneration suchen."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Wie lange dauert eine SOMAVIA-Anwendung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Eine SOMAVIA-Anwendung dauert in der Regel etwa 30 Minuten."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Ersetzt SOMAVIA eine medizinische Behandlung?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Nein. SOMAVIA ist als Regenerations- und Anwendungskonzept gedacht und ersetzt keine medizinische Diagnose oder Behandlung."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --accent: #00bcd4;
+            --accent-hover: #00acc1;
+            --bg-main: #1a1a1a;
+            --bg-dark: #121212;
+            --text-main: #e0e0e0;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
 
-<style>
-body {
-    font-family: 'Montserrat', sans-serif;
-    background:#1a1a1a;
-    color:#e0e0e0;
-}
-.accent{color:#00bcd4;}
-.btn{
-    background:#00bcd4;
-    color:black;
-    padding:14px 30px;
-    border-radius:30px;
-    font-weight:bold;
-}
-.glass{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    border-radius:15px;
-    padding:30px;
-}
-</style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-main);
+        }
 
-<!-- STRUCTURED DATA -->
-<script type="application/ld+json">
-{
-"@context":"https://schema.org",
-"@type":"Organization",
-"name":"SOMAVIA",
-"url":"https://somavia.health",
-"logo":"https://somavia.health/assets/SOMAVIA_Icon.png"
-}
-</script>
+        .hidden {
+            display: none;
+        }
 
+        .header-logo {
+            filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.25));
+            height: 45px;
+            width: auto;
+        }
+
+        .accent-color { color: var(--accent); }
+        .accent-bg { background-color: var(--accent); }
+        .bg-dark { background-color: var(--bg-dark); }
+
+        .nav-link {
+            transition: color 0.3s ease, opacity 0.3s ease;
+            opacity: 0.85;
+        }
+
+        .nav-link:hover {
+            color: var(--accent);
+            opacity: 1;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 188, 212, 0.45);
+            background-color: var(--accent-hover);
+        }
+
+        .glass-card {
+            background: rgba(44, 44, 44, 0.55);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 64px;
+            height: 3px;
+            background: var(--accent);
+            margin: 1.25rem auto 0;
+            border-radius: 999px;
+        }
+
+        .science-link {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            opacity: 0.7;
+            text-decoration: underline;
+            margin-top: 0.65rem;
+            display: inline-block;
+        }
+
+        .science-link:hover {
+            opacity: 1;
+        }
+
+        .fade-in {
+            animation: fadeIn 1.1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(22px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-overlay {
+            background:
+                linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.18), rgba(18,18,18,0.92)),
+                radial-gradient(circle at center, rgba(0,188,212,0.10), transparent 45%);
+        }
+
+        .soft-border {
+            border: 1px solid rgba(0, 188, 212, 0.15);
+        }
+
+        .mini-kicker {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.25em;
+            color: var(--accent);
+            opacity: 0.9;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1rem;
+            border-radius: 999px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.78rem;
+            color: rgba(224,224,224,0.88);
+        }
+
+        .input-field,
+        .textarea-field,
+        .select-field {
+            width: 100%;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 14px;
+            padding: 1rem 1rem;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+            color: var(--text-main);
+        }
+
+        .input-field::placeholder,
+        .textarea-field::placeholder {
+            color: rgba(224,224,224,0.38);
+        }
+
+        .input-field:focus,
+        .textarea-field:focus,
+        .select-field:focus {
+            border-color: rgba(0, 188, 212, 0.7);
+            box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.08);
+            background: rgba(255,255,255,0.06);
+        }
+
+        .form-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            opacity: 0.58;
+            font-weight: 700;
+        }
+
+        .note-box {
+            background: rgba(0,188,212,0.08);
+            border: 1px solid rgba(0,188,212,0.18);
+            border-radius: 16px;
+        }
+
+        .quote-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(0,188,212,0.12), transparent 35%);
+            pointer-events: none;
+        }
+
+        .status-box {
+            border-radius: 16px;
+            padding: 1rem 1.25rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .success-box {
+            border: 1px solid rgba(52, 211, 153, 0.25);
+            background: rgba(16, 185, 129, 0.12);
+            color: #bbf7d0;
+        }
+
+        .error-box {
+            border: 1px solid rgba(248, 113, 113, 0.25);
+            background: rgba(239, 68, 68, 0.12);
+            color: #fecaca;
+        }
+
+        .field-error {
+            font-size: 0.75rem;
+            color: #fca5a5;
+            min-height: 1rem;
+            display: block;
+        }
+
+        input[type="checkbox"] {
+            accent-color: var(--accent);
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header class="p-6 flex justify-between items-center">
-    <img src="assets/SOMAVIA_logo_final.png" style="height:40px;">
-    <nav class="space-x-6 text-sm">
-        <a href="#experience">Erlebnis</a>
-        <a href="#technology">Technologie</a>
-        <a href="#contact">Kontakt</a>
-    </nav>
+<header class="bg-dark/90 backdrop-blur-md p-5 fixed top-0 w-full z-50 border-b border-white/5">
+    <div class="container mx-auto flex justify-between items-center gap-6">
+        <a href="index.html">
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
+        </a>
+
+        <nav class="hidden lg:flex space-x-8 text-xs font-medium tracking-widest uppercase">
+            <a href="#experience" class="nav-link">Erlebnis</a>
+            <a href="#technology" class="nav-link">Technologie</a>
+            <a href="#applications" class="nav-link">Einsatz</a>
+            <a href="#for-people" class="nav-link">Für Menschen</a>
+            <a href="#faq" class="nav-link">FAQ</a>
+            <a href="#contact" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anfrage</a>
+        </nav>
+    </div>
 </header>
 
-<!-- HERO -->
-<section class="text-center py-32 px-6">
+<main class="pt-20">
 
-<h1 class="text-5xl md:text-7xl font-bold mb-6">
-Ein Zustand, den man <span class="accent">spürt</span>
-</h1>
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center p-6 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1519824145371-296894a0daa9?auto=format&fit=crop&q=80&w=2000" alt="SOMAVIA Regenerationsumgebung" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
 
-<p class="text-xl max-w-3xl mx-auto mb-10 opacity-80">
-SOMAVIA verbindet Licht, Klang und Atmosphäre zu einem Erlebnis,
-das Menschen nicht nur verstehen – sondern weiterempfehlen wollen.
-</p>
+        <div class="relative z-10 max-w-6xl fade-in">
+            <span class="mini-kicker mb-6 block">Multisensorische Regeneration für Körper & Geist</span>
 
-<a href="#contact" class="btn">SOMAVIA anfragen</a>
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+                Ein Zustand, den man <span class="accent-color">spürt</span> —
+                und weiterempfehlen möchte.
+            </h1>
 
-</section>
+            <p class="text-lg md:text-2xl font-light mb-8 max-w-4xl mx-auto opacity-85 leading-relaxed">
+                SOMAVIA verbindet Licht, Klang, Ruhe und Atmosphäre zu einem regenerativen Erlebnis,
+                das Menschen emotional berührt — und für Praxen, Therapiezentren und hochwertige Gesundheitskonzepte
+                zu einem echten Unterschied werden kann.
+            </p>
 
-<!-- EXPERIENCE -->
-<section id="experience" class="py-24 px-6 text-center">
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span class="pill">Licht</span>
+                <span class="pill">Klang</span>
+                <span class="pill">Atmosphäre</span>
+                <span class="pill">Entlastung</span>
+                <span class="pill">Tiefe Ruhe</span>
+            </div>
 
-<h2 class="text-4xl font-bold mb-10">
-Mehr als Entspannung
-</h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="cta-button py-4 px-10 rounded-full font-bold accent-bg text-black">SOMAVIA anfragen</a>
+                <a href="#for-people" class="py-4 px-10 rounded-full font-bold border border-white/20 hover:bg-white/5 transition-all">Ich möchte das erleben</a>
+            </div>
+        </div>
+    </section>
 
-<p class="max-w-3xl mx-auto opacity-70 mb-12">
-Menschen suchen heute nicht einfach Ruhe.
-Sie suchen einen Zustand, in dem sich ihr Körper wieder richtig anfühlt.
-Genau dort setzt SOMAVIA an.
-</p>
+    <section id="experience" class="py-24 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="mini-kicker mb-4 block">Warum Menschen darüber sprechen</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                        SOMAVIA ist nicht einfach Technik.
+                        <br />
+                        <span class="accent-color">Es ist ein spürbarer Moment von Ruhe.</span>
+                    </h2>
 
-<div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                    <p class="text-lg opacity-75 mb-6 leading-relaxed">
+                        Viele Menschen sind nicht nur müde — sie sind dauerhaft unter Spannung.
+                        SOMAVIA schafft einen Raum, in dem Reize reduziert und gleichzeitig gezielt geführt werden.
+                        So entsteht ein Erlebnis, das nicht laut ist, sondern tief.
+                    </p>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Spürbar</h3>
-<p>Ein Erlebnis, das nicht erklärt werden muss.</p>
-</div>
+                    <p class="text-lg opacity-75 mb-8 leading-relaxed">
+                        Genau das macht es so besonders für Standorte:
+                        Menschen erleben nicht einfach eine Anwendung — sie erleben einen Unterschied,
+                        den sie weitererzählen wollen.
+                    </p>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Weitererzählbar</h3>
-<p>Menschen sprechen darüber.</p>
-</div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="glass-card p-5">
+                            <p class="text-sm font-semibold mb-2 accent-color">Für Menschen</p>
+                            <p class="text-sm opacity-70 leading-relaxed">
+                                Ein Erlebnis, das Entlastung, Tiefe und einen bewussten Moment für Körper und Geist vermittelt.
+                            </p>
+                        </div>
+                        <div class="glass-card p-5">
+                            <p class="text-sm font-semibold mb-2 accent-color">Für Therapeuten</p>
+                            <p class="text-sm opacity-70 leading-relaxed">
+                                Ein System, das moderne Gesundheitskonzepte emotional aufwertet und klar differenzierbar macht.
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Integrierbar</h3>
-<p>Perfekt für moderne Praxen und Konzepte.</p>
-</div>
+                <div class="glass-card p-10 md:p-12 text-center quote-card">
+                    <h3 class="text-5xl font-bold accent-color mb-2">30 Minuten</h3>
+                    <p class="uppercase tracking-widest text-sm opacity-60 mb-8">Zeit für einen bewussten Wechsel des Zustands</p>
+                    <p class="text-base italic opacity-70 leading-relaxed max-w-xl mx-auto">
+                        „Manche Dinge erklärt man nicht zuerst.
+                        Man erlebt sie.
+                        Und genau deshalb kann SOMAVIA für Menschen so kraftvoll wirken —
+                        und für Standorte so wertvoll sein.“
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</div>
+    <section id="technology" class="py-24">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-4 section-title uppercase tracking-tighter">Science of Silence</h2>
+            <p class="max-w-3xl mx-auto opacity-65 mb-16 leading-relaxed">
+                SOMAVIA kombiniert ausgewählte Elemente moderner Regenerationskonzepte in einem stimmigen Gesamterlebnis —
+                technologisch anspruchsvoll, aber menschlich zugänglich.
+            </p>
 
-</section>
+            <div class="grid md:grid-cols-2 gap-10">
+                <div class="glass-card p-12 hover:border-[#00bcd4]/30 transition-all group">
+                    <div class="w-20 h-20 bg-[#1a1a1a] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Photobiomodulation</h3>
+                    <p class="opacity-70 leading-relaxed text-sm">
+                        Spezifische Lichtwellenlängen werden in der Forschung mit zellulären Prozessen,
+                        mitochondrialer Aktivität und Regeneration in Verbindung gebracht.
+                        SOMAVIA integriert diesen Ansatz in ein multisensorisches Gesamtsystem.
+                    </p>
+                    <a href="https://pubmed.ncbi.nlm.nih.gov/24049929/" target="_blank" rel="noopener noreferrer" class="science-link">Studie: PBM & Mitochondrien</a>
+                </div>
 
-<!-- TECHNOLOGY -->
-<section id="technology" class="py-24 px-6 text-center">
+                <div class="glass-card p-12 hover:border-[#00bcd4]/30 transition-all group">
+                    <div class="w-20 h-20 bg-[#1a1a1a] rounded-2xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                        <svg class="w-10 h-10 accent-color" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V5l12 7-12 7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Neuro-akustische Führung</h3>
+                    <p class="opacity-70 leading-relaxed text-sm">
+                        Klang kann Atmosphäre, Fokus und subjektives Stressempfinden deutlich beeinflussen.
+                        In SOMAVIA dient Audio nicht als Hintergrund —
+                        sondern als bewusst gestalteter Bestandteil des Erlebnisses.
+                    </p>
+                    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4428073/" target="_blank" rel="noopener noreferrer" class="science-link">Studie: Auditive Stimulation</a>
+                </div>
+            </div>
 
-<h2 class="text-4xl font-bold mb-12">
-Multisensorische Regeneration
-</h2>
+            <div class="mt-10 note-box p-6 max-w-4xl mx-auto text-left">
+                <p class="text-sm opacity-75 leading-relaxed">
+                    <strong class="accent-color">Wichtig:</strong>
+                    SOMAVIA ist als System zur multisensorischen Regeneration und als Ergänzung moderner Gesundheits- und Wohlfühlkonzepte gedacht.
+                    Inhalte auf dieser Website ersetzen keine medizinische Diagnose oder Behandlung und stellen kein Heilversprechen dar.
+                </p>
+            </div>
+        </div>
+    </section>
 
-<p class="max-w-3xl mx-auto opacity-70 mb-10">
-SOMAVIA kombiniert Licht, Klang und gezielte Reizreduktion
-zu einem Zustand tiefer Entlastung.
-</p>
+    <section id="applications" class="py-24 bg-dark">
+        <div class="container mx-auto px-6 text-center lg:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl">
+                    <span class="mini-kicker mb-4 block">Einsatzbereiche</span>
+                    <h2 class="text-4xl font-bold mb-4 italic uppercase tracking-widest">Sinnvoll integrierbar.</h2>
+                    <p class="opacity-65 leading-relaxed">
+                        SOMAVIA kann dort wirken, wo Menschen Regeneration, Entlastung, hochwertige Begleitung
+                        und bewusst gestaltete Erlebnisse suchen.
+                    </p>
+                </div>
+                <div class="text-[#00bcd4] font-bold text-lg hidden md:block">01 — 03</div>
+            </div>
 
-</section>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1579154235828-ac01e5516040?auto=format&fit=crop&q=80&w=800" alt="Chiropraktik und Praxis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Praxen & Therapiezentren</h3>
+                        <p class="text-sm opacity-70 leading-relaxed mb-4">
+                            Eine außergewöhnliche Ergänzung für Konzepte, die Menschen nicht nur behandeln,
+                            sondern ihnen einen echten Zustand von Ruhe und Aufnahmefähigkeit eröffnen möchten.
+                        </p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Therapeutic Experience</span>
+                    </div>
+                </div>
 
-<!-- FAQ -->
-<section class="py-24 px-6">
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800" alt="Wellness und Spa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Wellness, Spa & Retreat</h3>
+                        <p class="text-sm opacity-70 leading-relaxed mb-4">
+                            Für Standorte, die mehr bieten wollen als Entspannung:
+                            ein modernes, hochwertiges Erlebnis mit Wiedererkennungswert und emotionaler Tiefe.
+                        </p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Premium Atmosphere</span>
+                    </div>
+                </div>
 
-<h2 class="text-3xl text-center mb-10">Häufige Fragen</h2>
+                <div class="glass-card overflow-hidden group border-none">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Corporate Health" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold mb-2 uppercase">Corporate & Performance</h3>
+                        <p class="text-sm opacity-70 leading-relaxed mb-4">
+                            Für moderne Räume, in denen Regeneration, mentale Entlastung und Fokus
+                            nicht als Luxus, sondern als Teil gesunder Leistungskultur verstanden werden.
+                        </p>
+                        <span class="text-[10px] uppercase tracking-widest accent-color font-bold border-b border-[#00bcd4]/50">Business Recovery</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="max-w-3xl mx-auto space-y-6">
+    <section id="for-people" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center mb-14">
+                <span class="mini-kicker mb-4 block">Für interessierte Menschen</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                    Sie möchten SOMAVIA selbst erleben —
+                    <span class="accent-color">am liebsten bei einem Anbieter in Ihrer Nähe?</span>
+                </h2>
+                <p class="text-lg opacity-72 leading-relaxed max-w-3xl mx-auto">
+                    Dann erzählen Sie Ihrem Therapeuten, Gesundheitszentrum oder Lieblingsort für Regeneration davon.
+                    SOMAVIA ist dafür gemacht, nicht nur verstanden, sondern gespürt zu werden.
+                </p>
+            </div>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Was ist SOMAVIA?</h3>
-<p>SOMAVIA ist ein multisensorisches Regenerationskonzept aus Licht, Klang und Atmosphäre.</p>
-</div>
+            <div class="grid lg:grid-cols-3 gap-6">
+                <div class="glass-card p-8">
+                    <div class="text-sm font-bold accent-color mb-3 uppercase tracking-widest">1. Entdecken</div>
+                    <h3 class="text-xl font-semibold mb-3">Sie stoßen auf SOMAVIA</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Und merken sofort: Das fühlt sich anders an als klassische Wellness.
+                        Ruhiger. Tiefer. Klarer.
+                    </p>
+                </div>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Für wen ist es?</h3>
-<p>Für Praxen, Therapiezentren und Menschen, die echte Entlastung suchen.</p>
-</div>
+                <div class="glass-card p-8">
+                    <div class="text-sm font-bold accent-color mb-3 uppercase tracking-widest">2. Teilen</div>
+                    <h3 class="text-xl font-semibold mb-3">Sie bringen die Idee mit</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Vielleicht zu Ihrem Therapeuten, Ihrer Praxis oder einem Ort,
+                        an dem Menschen mehr als nur eine Anwendung suchen.
+                    </p>
+                </div>
 
-<div class="glass">
-<h3 class="font-bold mb-2">Wie lange dauert es?</h3>
-<p>Etwa 30 Minuten.</p>
-</div>
+                <div class="glass-card p-8">
+                    <div class="text-sm font-bold accent-color mb-3 uppercase tracking-widest">3. Möglich machen</div>
+                    <h3 class="text-xl font-semibold mb-3">Wir kommen ins Gespräch</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Wenn ein Standort Interesse hat, prüfen wir gemeinsam,
+                        ob SOMAVIA konzeptionell und menschlich dorthin passt.
+                    </p>
+                </div>
+            </div>
 
-</div>
+            <div class="mt-10 glass-card p-8 md:p-10 max-w-4xl mx-auto text-center soft-border">
+                <h3 class="text-2xl md:text-3xl font-bold mb-4">Einfacher Vorschlag für Ihren Therapeuten</h3>
+                <p class="opacity-72 leading-relaxed mb-6">
+                    „Ich habe SOMAVIA entdeckt. Das wirkt wie ein sehr hochwertiges Regenerationskonzept.
+                    Vielleicht wäre das auch spannend für Ihre Praxis.“
+                </p>
+                <a href="#contact" class="inline-block cta-button py-4 px-8 rounded-full font-bold accent-bg text-black">
+                    Interesse mitteilen
+                </a>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <section id="why-somavia" class="py-24 bg-[#121212] border-y border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto text-center mb-14">
+                <span class="mini-kicker mb-4 block">Warum SOMAVIA</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Was SOMAVIA besonders macht</h2>
+                <p class="text-lg opacity-68 leading-relaxed max-w-3xl mx-auto">
+                    Nicht ein einzelnes Gerät. Nicht nur ein schöner Raum.
+                    Sondern ein stimmig entwickeltes System, das Technologie, Atmosphäre und emotionale Wirkung verbindet.
+                </p>
+            </div>
 
-<!-- CONTACT -->
-<section id="contact" class="py-24 px-6 text-center">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="glass-card p-7">
+                    <h3 class="font-bold text-lg mb-3">Emotional verständlich</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        SOMAVIA spricht nicht nur Fachlichkeit an —
+                        sondern das, was Menschen unmittelbar fühlen.
+                    </p>
+                </div>
+                <div class="glass-card p-7">
+                    <h3 class="font-bold text-lg mb-3">Premium ohne Kälte</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Hochwertig, modern und klar —
+                        aber nicht technisch distanziert.
+                    </p>
+                </div>
+                <div class="glass-card p-7">
+                    <h3 class="font-bold text-lg mb-3">Standortfähig</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Für Praxen, Gesundheitszentren und besondere Räume,
+                        die sich sinnvoll differenzieren möchten.
+                    </p>
+                </div>
+                <div class="glass-card p-7">
+                    <h3 class="font-bold text-lg mb-3">Weitererzählbar</h3>
+                    <p class="text-sm opacity-70 leading-relaxed">
+                        Gute Konzepte werden verstanden.
+                        Besondere Konzepte werden empfohlen.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<h2 class="text-4xl mb-8">Kontakt</h2>
+    <section id="faq" class="py-24 bg-dark border-y border-white/5">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center mb-14">
+                <span class="mini-kicker mb-4 block">FAQ</span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Häufige Fragen zu SOMAVIA</h2>
+                <p class="opacity-70 leading-relaxed">
+                    Klare Antworten für Menschen, Praxen und Therapiezentren.
+                </p>
+            </div>
 
-<form action="https://formspree.io/f/xbdqpeoa" method="POST" class="max-w-2xl mx-auto space-y-4">
+            <div class="space-y-6">
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-bold mb-3">Was ist SOMAVIA?</h3>
+                    <p class="opacity-75 leading-relaxed">
+                        SOMAVIA ist ein multisensorisches Regenerationskonzept, das Licht, Klang, Ruhe und Atmosphäre in einem geführten Erlebnis verbindet.
+                    </p>
+                </div>
 
-<input type="text" name="Name" placeholder="Name" required class="w-full p-4 rounded bg-black/30">
-<input type="email" name="email" placeholder="E-Mail" required class="w-full p-4 rounded bg-black/30">
-<textarea name="message" placeholder="Nachricht" required class="w-full p-4 rounded bg-black/30"></textarea>
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-bold mb-3">Für wen ist SOMAVIA gedacht?</h3>
+                    <p class="opacity-75 leading-relaxed">
+                        SOMAVIA richtet sich an Praxen, Therapiezentren, Spa- und Gesundheitskonzepte sowie an Menschen, die tiefe Ruhe, Entlastung und moderne Regeneration suchen.
+                    </p>
+                </div>
 
-<label class="text-sm block">
-<input type="checkbox" required> Ich habe die <a href="datenschutz.html" class="accent">Datenschutzerklärung</a> gelesen
-</label>
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-bold mb-3">Wie lange dauert eine SOMAVIA-Anwendung?</h3>
+                    <p class="opacity-75 leading-relaxed">
+                        Eine SOMAVIA-Anwendung dauert in der Regel etwa 30 Minuten.
+                    </p>
+                </div>
 
-<button type="submit" class="btn w-full">Anfrage senden</button>
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-bold mb-3">Ersetzt SOMAVIA eine medizinische Behandlung?</h3>
+                    <p class="opacity-75 leading-relaxed">
+                        Nein. SOMAVIA ist als Regenerations- und Anwendungskonzept gedacht und ersetzt keine medizinische Diagnose oder Behandlung.
+                    </p>
+                </div>
 
-</form>
+                <div class="glass-card p-8">
+                    <h3 class="text-xl font-bold mb-3">Wo kann man SOMAVIA erleben?</h3>
+                    <p class="opacity-75 leading-relaxed">
+                        SOMAVIA befindet sich im Aufbau. Wenn Sie Interesse haben, SOMAVIA selbst zu erleben oder es an einen Standort in Ihrer Nähe zu bringen, können Sie uns direkt kontaktieren.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <section id="contact" class="py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="glass-card p-10 md:p-16 relative z-10 border-[#00bcd4]/20">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="mini-kicker mb-4 block">Kontakt</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 italic">Lassen Sie uns ins Gespräch kommen.</h2>
+                    <p class="opacity-72 leading-relaxed">
+                        Ob als Therapeut, Standort, Spa, Unternehmen oder interessierte Person:
+                        Schreiben Sie uns, wenn Sie SOMAVIA näher kennenlernen oder an Ihren Ort bringen möchten.
+                    </p>
+                </div>
 
-<!-- FOOTER -->
-<footer class="py-10 text-center text-sm opacity-50">
+                <div data-fs-success class="hidden status-box success-box mb-6">
+                    Vielen Dank. Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns so bald wie möglich zurück.
+                </div>
 
-<a href="impressum.html">Impressum</a> |
-<a href="datenschutz.html">Datenschutz</a>
+                <div data-fs-error class="hidden status-box error-box mb-6">
+                    Leider konnte Ihre Anfrage gerade nicht gesendet werden. Bitte versuchen Sie es erneut.
+                </div>
 
-<br><br>
-© SOMAVIA
+                <form
+                    id="contactForm"
+                    action="https://formspree.io/f/xbdqpeoa"
+                    method="POST"
+                    class="grid md:grid-cols-2 gap-6"
+                >
+                    <input type="hidden" name="_subject" value="Neue SOMAVIA Anfrage über somavia.health" />
+                    <input type="hidden" name="_language" value="de" />
+                    <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
 
+                    <div class="space-y-2">
+                        <label for="userType" class="form-label">Ich bin</label>
+                        <select id="userType" name="Ich bin" class="select-field" data-fs-field required>
+                            <option value="">Bitte auswählen</option>
+                            <option value="Therapeut / Praxis">Therapeut / Praxis</option>
+                            <option value="Spa / Gesundheitszentrum">Spa / Gesundheitszentrum</option>
+                            <option value="Unternehmen / Corporate">Unternehmen / Corporate</option>
+                            <option value="Interessierte Privatperson">Interessierte Privatperson</option>
+                            <option value="Sonstiges">Sonstiges</option>
+                        </select>
+                        <span data-fs-error="Ich bin" class="field-error"></span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="userFocus" class="form-label">Mein Interesse</label>
+                        <select id="userFocus" name="Interesse" class="select-field" data-fs-field required>
+                            <option value="">Bitte auswählen</option>
+                            <option value="SOMAVIA für meinen Standort">SOMAVIA für meinen Standort</option>
+                            <option value="Ich möchte SOMAVIA vor Ort erleben">Ich möchte SOMAVIA vor Ort erleben</option>
+                            <option value="Kooperation / Partnerschaft">Kooperation / Partnerschaft</option>
+                            <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+                        </select>
+                        <span data-fs-error="Interesse" class="field-error"></span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="userName" class="form-label">Name</label>
+                        <input type="text" id="userName" name="Name" class="input-field" data-fs-field required />
+                        <span data-fs-error="Name" class="field-error"></span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="userCompany" class="form-label">Praxis / Unternehmen / Ort</label>
+                        <input type="text" id="userCompany" name="Praxis / Unternehmen / Ort" class="input-field" data-fs-field placeholder="Optional bei Privatpersonen" />
+                        <span data-fs-error="Praxis / Unternehmen / Ort" class="field-error"></span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="userEmail" class="form-label">E-Mail</label>
+                        <input type="email" id="userEmail" name="email" class="input-field" data-fs-field required />
+                        <span data-fs-error="email" class="field-error"></span>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label for="userPhone" class="form-label">Telefon</label>
+                        <input type="tel" id="userPhone" name="Telefon" class="input-field" data-fs-field />
+                        <span data-fs-error="Telefon" class="field-error"></span>
+                    </div>
+
+                    <div class="md:col-span-2 space-y-2">
+                        <label for="userLocation" class="form-label">Ort / Region</label>
+                        <input type="text" id="userLocation" name="Ort / Region" class="input-field" data-fs-field placeholder="z. B. Hannover, Bad Nenndorf, Hamburg" />
+                        <span data-fs-error="Ort / Region" class="field-error"></span>
+                    </div>
+
+                    <div class="md:col-span-2 space-y-2">
+                        <label for="userMessage" class="form-label">Nachricht</label>
+                        <textarea
+                            id="userMessage"
+                            name="message"
+                            rows="6"
+                            class="textarea-field"
+                            data-fs-field
+                            placeholder="Worum geht es Ihnen? Möchten Sie SOMAVIA für Ihren Standort anfragen oder wünschen Sie sich einen Anbieter in Ihrer Nähe?"
+                            required
+                        ></textarea>
+                        <span data-fs-error="message" class="field-error"></span>
+                    </div>
+
+                    <div class="md:col-span-2 flex items-start gap-3 text-sm opacity-75 leading-relaxed">
+                        <input type="checkbox" id="privacyConsent" required class="mt-1 shrink-0" />
+                        <label for="privacyConsent">
+                            Ich habe die
+                            <a href="datenschutz.html" class="accent-color underline">Datenschutzerklärung</a>
+                            gelesen und bin mit der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage einverstanden.
+                        </label>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <button
+                            type="submit"
+                            data-fs-submit-btn
+                            class="w-full py-5 rounded-full accent-bg text-black font-bold text-lg uppercase tracking-widest cta-button"
+                        >
+                            Anfrage senden
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="bg-dark py-12 border-t border-white/5">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+        <a href="index.html">
+            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
+        </a>
+
+        <div class="text-[10px] opacity-40 flex flex-wrap justify-center gap-6 uppercase tracking-widest">
+            <a href="impressum.html" class="hover:text-white">Impressum</a>
+            <a href="datenschutz.html" class="hover:text-white">Datenschutz</a>
+            <a href="mailto:m.weh@chirohealth.de" class="hover:text-white">Kontakt: m.weh@chirohealth.de</a>
+        </div>
+
+        <div class="text-[10px] opacity-30">
+            &copy; 2026 SOMAVIA. All Rights Reserved.
+        </div>
+    </div>
 </footer>
+
+<script>
+    window.formspree = window.formspree || function () {
+        (formspree.q = formspree.q || []).push(arguments);
+    };
+
+    formspree('initForm', {
+        formElement: '#contactForm',
+        formId: 'xbdqpeoa',
+        onSuccess: function () {
+            const successBox = document.querySelector('[data-fs-success]');
+            const errorBox = document.querySelector('[data-fs-error]');
+            const form = document.getElementById('contactForm');
+
+            if (errorBox) errorBox.classList.add('hidden');
+            if (successBox) {
+                successBox.classList.remove('hidden');
+                successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+
+            if (form) form.reset();
+        },
+        onError: function () {
+            const successBox = document.querySelector('[data-fs-success]');
+            const errorBox = document.querySelector('[data-fs-error]');
+
+            if (successBox) successBox.classList.add('hidden');
+            if (errorBox) {
+                errorBox.classList.remove('hidden');
+                errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    });
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 
 </body>
 </html>
