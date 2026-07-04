@@ -67,35 +67,35 @@
 
     <style>
         :root {
-            --accent: #00bcd4;
-            --accent-hover: #00acc1;
+            --accent: #11928c;
+            --accent-hover: #0d7b75;
             --bg-main: #1a1a1a;
             --bg-dark: #121212;
             --text-main: #e0e0e0;
         }
         html { scroll-behavior: smooth; }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-main); color: var(--text-main); }
-        .header-logo { filter: drop-shadow(0 0 8px rgba(0, 188, 212, 0.25)); height: 45px; width: auto; }
+        .header-logo { filter: drop-shadow(0 0 8px rgba(17, 146, 140, 0.25)); height: 45px; width: auto; }
         .accent-color { color: var(--accent); }
         .accent-bg { background-color: var(--accent); }
         .bg-dark { background-color: var(--bg-dark); }
         .nav-link { transition: color 0.3s ease, opacity 0.3s ease; opacity: 0.85; }
         .nav-link:hover { color: var(--accent); opacity: 1; }
-        .cta-button { transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0, 188, 212, 0.25); }
-        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 188, 212, 0.45); background-color: var(--accent-hover); }
+        .cta-button { transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(17, 146, 140, 0.25); }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(17, 146, 140, 0.45); background-color: var(--accent-hover); }
         .glass-card { background: rgba(44, 44, 44, 0.55); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 18px; }
         .hero-overlay {
             background:
                 linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.20), rgba(18,18,18,0.94)),
-                radial-gradient(circle at center, rgba(0,188,212,0.12), transparent 45%);
+                radial-gradient(circle at center, rgba(17,146,140,0.12), transparent 45%);
         }
         .mini-kicker { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--accent); opacity: 0.9; }
         .pill { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1rem; border-radius: 999px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); font-size: 0.82rem; color: rgba(224,224,224,0.90); }
         .detail-row { display: flex; align-items: flex-start; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
         .detail-row:last-child { border-bottom: none; }
-        .detail-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(0,188,212,0.10); border: 1px solid rgba(0,188,212,0.20); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .detail-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(17,146,140,0.10); border: 1px solid rgba(17,146,140,0.20); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .detail-label { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.14em; opacity: 0.55; font-weight: 700; }
-        .note-box { background: rgba(0,188,212,0.08); border: 1px solid rgba(0,188,212,0.18); border-radius: 16px; }
+        .note-box { background: rgba(17,146,140,0.08); border: 1px solid rgba(17,146,140,0.18); border-radius: 16px; }
     </style>
 </head>
 <body>
@@ -108,7 +108,7 @@
         <nav class="hidden lg:flex space-x-8 text-xs font-medium tracking-widest uppercase items-center">
             <a href="index.html" class="nav-link">Startseite</a>
             <a href="#details" class="nav-link">Programm</a>
-            <a href="#tickets" class="nav-link accent-color border border-[#00bcd4]/30 px-4 py-2 rounded-sm hover:bg-[#00bcd4] hover:text-black">Anmelden</a>
+            <a href="#tickets" class="nav-link accent-color border border-[#11928c]/30 px-4 py-2 rounded-sm hover:bg-[#11928c] hover:text-black">Anmelden</a>
         </nav>
     </div>
 </header>
@@ -250,7 +250,7 @@
                 </div>
 
                 <!-- Tickets -->
-                <div class="glass-card p-8 md:p-10 flex flex-col justify-center text-center" style="border:1px solid rgba(0,188,212,0.20)">
+                <div class="glass-card p-8 md:p-10 flex flex-col justify-center text-center" style="border:1px solid rgba(17,146,140,0.20)">
                     <span class="mini-kicker mb-4 block">Anmeldung</span>
                     <h2 class="text-2xl md:text-3xl font-bold mb-4">Sichern Sie sich Ihren Platz</h2>
                     <p class="opacity-72 leading-relaxed mb-8 max-w-md mx-auto">
@@ -258,13 +258,19 @@
                         damit wir gut planen können und Sie SOMAVIA in Ruhe erleben.
                     </p>
 
-                    <div id="eventbrite-widget-container" class="rounded-2xl overflow-hidden bg-white/[0.02] min-h-[220px]"></div>
+                    <a href="https://www.eventbrite.de/e/regeneration-auszeit-somavia-eroffnungsfeier-in-bad-nenndorf-tickets-1992704329291"
+                       target="_blank" rel="noopener noreferrer"
+                       class="cta-button py-5 px-10 rounded-full font-bold accent-bg text-black text-lg uppercase tracking-widest inline-block">
+                        🎟️ Anmelden &amp; Session buchen
+                    </a>
 
-                    <p class="text-xs opacity-45 mt-5 leading-relaxed">
-                        Falls das Anmeldeformular nicht lädt, können Sie sich auch direkt bei
-                        <a href="https://www.eventbrite.de/e/regeneration-auszeit-somavia-eroffnungsfeier-in-bad-nenndorf-tickets-1992704329291"
-                           target="_blank" rel="noopener noreferrer" class="accent-color underline">Eventbrite</a>
-                        anmelden.
+                    <p class="text-sm opacity-72 mt-6 leading-relaxed">
+                        Die <strong class="accent-color">10-Minuten-Schnuppersession (10 €)</strong> können Sie im
+                        Anmeldeprozess als <strong>Add-on</strong> hinzufügen — der Betrag wird auf spätere
+                        Paket-Buchungen angerechnet.
+                    </p>
+                    <p class="text-xs opacity-45 mt-3 leading-relaxed">
+                        Sie werden zu Eventbrite weitergeleitet; Anmeldung und Add-on werden sicher über Eventbrite abgewickelt.
                     </p>
                 </div>
             </div>
@@ -312,16 +318,6 @@
         </div>
     </div>
 </footer>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-<script>
-    window.EBWidgets.createWidget({
-        widgetType: 'checkout',
-        eventId: '1992704329291',
-        iframeContainerId: 'eventbrite-widget-container',
-        iframeContainerHeight: 540
-    });
-</script>
 
 </body>
 </html>
