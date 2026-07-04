@@ -8,24 +8,25 @@
     <meta name="description" content="SOMAVIA ist ein multisensorisches Regenerationskonzept für Praxen, Therapiezentren und Menschen, die tiefe Ruhe, Entlastung und moderne Regeneration erleben möchten." />
     <link rel="canonical" href="https://somavia.health/" />
     <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://somavia.health/" />
     <meta property="og:title" content="SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre" />
     <meta property="og:description" content="SOMAVIA verbindet Licht, Klang, Ruhe und Atmosphäre zu einem multisensorischen Regenerationserlebnis für Praxen, Therapiezentren und hochwertige Gesundheitskonzepte." />
-    <meta property="og:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta property="og:image" content="https://somavia.health/assets/og-cover.png" />
     <meta property="og:site_name" content="SOMAVIA" />
     <meta property="og:locale" content="de_DE" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SOMAVIA | Multisensorische Regeneration mit Licht, Klang und Atmosphäre" />
     <meta name="twitter:description" content="Multisensorische Regeneration mit Licht, Klang, Ruhe und Atmosphäre für Praxen, Therapiezentren und interessierte Menschen." />
-    <meta name="twitter:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta name="twitter:image" content="https://somavia.health/assets/og-cover.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles.css" />
 
     <script type="application/ld+json">
     {
@@ -97,232 +98,13 @@
       ]
     }
     </script>
-
-    <style>
-        :root {
-            --accent: #11928c;
-            --accent-hover: #0d7b75;
-            --bg-main: #1a1a1a;
-            --bg-dark: #121212;
-            --text-main: #e0e0e0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-        }
-
-        .hidden {
-            display: none;
-        }
-
-        .header-logo {
-            filter: drop-shadow(0 0 8px rgba(17, 146, 140, 0.25));
-            height: 45px;
-            width: auto;
-        }
-
-        .accent-color { color: var(--accent); }
-        .accent-bg { background-color: var(--accent); }
-        .bg-dark { background-color: var(--bg-dark); }
-
-        .nav-link {
-            transition: color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.85;
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-            opacity: 1;
-        }
-
-        .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(17, 146, 140, 0.25);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(17, 146, 140, 0.45);
-            background-color: var(--accent-hover);
-        }
-
-        .glass-card {
-            background: rgba(44, 44, 44, 0.55);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 64px;
-            height: 3px;
-            background: var(--accent);
-            margin: 1.25rem auto 0;
-            border-radius: 999px;
-        }
-
-        .science-link {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: var(--accent);
-            opacity: 0.7;
-            text-decoration: underline;
-            margin-top: 0.65rem;
-            display: inline-block;
-        }
-
-        .science-link:hover {
-            opacity: 1;
-        }
-
-        .fade-in {
-            animation: fadeIn 1.1s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(22px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .hero-overlay {
-            background:
-                linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.18), rgba(18,18,18,0.92)),
-                radial-gradient(circle at center, rgba(17,146,140,0.10), transparent 45%);
-        }
-
-        .soft-border {
-            border: 1px solid rgba(17, 146, 140, 0.15);
-        }
-
-        .mini-kicker {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--accent);
-            opacity: 0.9;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.78rem;
-            color: rgba(224,224,224,0.88);
-        }
-
-        .input-field,
-        .textarea-field,
-        .select-field {
-            width: 100%;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.10);
-            border-radius: 14px;
-            padding: 1rem 1rem;
-            outline: none;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-            color: var(--text-main);
-        }
-
-        .input-field::placeholder,
-        .textarea-field::placeholder {
-            color: rgba(224,224,224,0.38);
-        }
-
-        .input-field:focus,
-        .textarea-field:focus,
-        .select-field:focus {
-            border-color: rgba(17, 146, 140, 0.7);
-            box-shadow: 0 0 0 4px rgba(17, 146, 140, 0.08);
-            background: rgba(255,255,255,0.06);
-        }
-
-        .form-label {
-            font-size: 0.68rem;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            opacity: 0.58;
-            font-weight: 700;
-        }
-
-        .note-box {
-            background: rgba(17,146,140,0.08);
-            border: 1px solid rgba(17,146,140,0.18);
-            border-radius: 16px;
-        }
-
-        .quote-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .quote-card::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at top right, rgba(17,146,140,0.12), transparent 35%);
-            pointer-events: none;
-        }
-
-        .status-box {
-            border-radius: 16px;
-            padding: 1rem 1.25rem;
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        .success-box {
-            border: 1px solid rgba(52, 211, 153, 0.25);
-            background: rgba(16, 185, 129, 0.12);
-            color: #bbf7d0;
-        }
-
-        .error-box {
-            border: 1px solid rgba(248, 113, 113, 0.25);
-            background: rgba(239, 68, 68, 0.12);
-            color: #fecaca;
-        }
-
-        .field-error {
-            font-size: 0.75rem;
-            color: #fca5a5;
-            min-height: 1rem;
-            display: block;
-        }
-
-        .subpage-card {
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .subpage-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(17, 146, 140, 0.35);
-            box-shadow: 0 10px 30px rgba(17, 146, 140, 0.12);
-        }
-
-        input[type="checkbox"] {
-            accent-color: var(--accent);
-        }
-    </style>
 </head>
 <body>
 
 <header class="bg-dark/90 backdrop-blur-md p-5 fixed top-0 w-full z-50 border-b border-white/5">
     <div class="container mx-auto flex justify-between items-center gap-6">
         <a href="index.html">
-            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
+            <img fetchpriority="high" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
         </a>
 
         <nav class="hidden lg:flex space-x-8 text-xs font-medium tracking-widest uppercase">
@@ -334,7 +116,20 @@
             <a href="#faq" class="nav-link">FAQ</a>
             <a href="#contact" class="nav-link accent-color border border-[#11928c]/30 px-4 py-2 rounded-sm hover:bg-[#11928c] hover:text-black">Anfrage</a>
         </nav>
+        <button id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" class="lg:hidden text-[#e0e0e0] hover:text-[#11928c] transition-colors p-2 -mr-2">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden flex-col container mx-auto mt-3 text-xs font-medium tracking-widest uppercase">
+        <a href="#experience" class="block py-3 border-b border-white/5 nav-link">Erlebnis</a>
+        <a href="#technology" class="block py-3 border-b border-white/5 nav-link">Technologie</a>
+        <a href="#applications" class="block py-3 border-b border-white/5 nav-link">Einsatz</a>
+        <a href="#for-people" class="block py-3 border-b border-white/5 nav-link">Für Menschen</a>
+        <a href="#subpages" class="block py-3 border-b border-white/5 nav-link">Mehr erfahren</a>
+        <a href="#faq" class="block py-3 border-b border-white/5 nav-link">FAQ</a>
+        <a href="#contact" class="block py-3 border-b border-white/5 accent-color font-semibold">Anfrage</a>
+    </nav>
 </header>
 
 <main class="pt-20">
@@ -511,7 +306,7 @@
             <div class="grid md:grid-cols-3 gap-6">
                 <div class="glass-card overflow-hidden group border-none">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1579154235828-ac01e5516040?auto=format&fit=crop&q=80&w=800" alt="Chiropraktik und Praxis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1579154235828-ac01e5516040?auto=format&fit=crop&q=80&w=800" alt="Chiropraktik und Praxis" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold mb-2 uppercase">Praxen & Therapiezentren</h3>
@@ -525,7 +320,7 @@
 
                 <div class="glass-card overflow-hidden group border-none">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800" alt="Wellness und Spa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=800" alt="Wellness und Spa" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold mb-2 uppercase">Wellness, Spa & Retreat</h3>
@@ -539,7 +334,7 @@
 
                 <div class="glass-card overflow-hidden group border-none">
                     <div class="h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Corporate Health" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
+                        <img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Corporate Health" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60" />
                     </div>
                     <div class="p-8">
                         <h3 class="text-xl font-bold mb-2 uppercase">Corporate & Performance</h3>
@@ -872,7 +667,7 @@
 <footer class="bg-dark py-12 border-t border-white/5">
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
         <a href="index.html">
-            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
+            <img loading="lazy" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
         </a>
 
         <div class="text-[10px] opacity-40 flex flex-wrap justify-center gap-6 uppercase tracking-widest">
@@ -938,5 +733,6 @@
     </div>
 </section>
 
+<script src="assets/app.js" defer></script>
 </body>
 </html>

@@ -8,24 +8,25 @@
     <meta name="description" content="SOMAVIA für Therapeuten, Praxen und Therapiezentren: ein multisensorisches Regenerationskonzept mit Licht, Klang und Atmosphäre zur hochwertigen Ergänzung moderner Gesundheitskonzepte." />
     <link rel="canonical" href="https://somavia.health/somavia-fuer-therapeuten.html" />
     <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png" />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://somavia.health/somavia-fuer-therapeuten.html" />
     <meta property="og:title" content="SOMAVIA für Therapeuten | Regeneration als hochwertiges Praxiskonzept" />
     <meta property="og:description" content="SOMAVIA ergänzt moderne Praxen und Therapiezentren um ein emotional starkes Regenerationskonzept mit Licht, Klang, Ruhe und Atmosphäre." />
-    <meta property="og:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta property="og:image" content="https://somavia.health/assets/og-cover.png" />
     <meta property="og:site_name" content="SOMAVIA" />
     <meta property="og:locale" content="de_DE" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="SOMAVIA für Therapeuten | Regeneration als hochwertiges Praxiskonzept" />
     <meta name="twitter:description" content="SOMAVIA für Praxen und Therapiezentren: multisensorische Regeneration als hochwertige Ergänzung moderner Gesundheitskonzepte." />
-    <meta name="twitter:image" content="https://somavia.health/assets/SOMAVIA_Icon.png" />
+    <meta name="twitter:image" content="https://somavia.health/assets/og-cover.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/styles.css" />
 
     <script type="application/ld+json">
     {
@@ -67,133 +68,13 @@
       ]
     }
     </script>
-
-    <style>
-        :root {
-            --accent: #11928c;
-            --accent-hover: #0d7b75;
-            --bg-main: #1a1a1a;
-            --bg-dark: #121212;
-            --text-main: #e0e0e0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-main);
-            color: var(--text-main);
-        }
-
-        .header-logo {
-            filter: drop-shadow(0 0 8px rgba(17, 146, 140, 0.25));
-            height: 45px;
-            width: auto;
-        }
-
-        .accent-color { color: var(--accent); }
-        .accent-bg { background-color: var(--accent); }
-        .bg-dark { background-color: var(--bg-dark); }
-
-        .nav-link {
-            transition: color 0.3s ease, opacity 0.3s ease;
-            opacity: 0.85;
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-            opacity: 1;
-        }
-
-        .cta-button {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(17, 146, 140, 0.25);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(17, 146, 140, 0.45);
-            background-color: var(--accent-hover);
-        }
-
-        .glass-card {
-            background: rgba(44, 44, 44, 0.55);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 64px;
-            height: 3px;
-            background: var(--accent);
-            margin: 1.25rem auto 0;
-            border-radius: 999px;
-        }
-
-        .hero-overlay {
-            background:
-                linear-gradient(to bottom, rgba(18,18,18,0.82), rgba(18,18,18,0.18), rgba(18,18,18,0.92)),
-                radial-gradient(circle at center, rgba(17,146,140,0.10), transparent 45%);
-        }
-
-        .mini-kicker {
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.25em;
-            color: var(--accent);
-            opacity: 0.9;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            border-radius: 999px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            font-size: 0.78rem;
-            color: rgba(224,224,224,0.88);
-        }
-
-        .content-block h2 {
-            font-size: 1.9rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-        }
-
-        .content-block p {
-            opacity: 0.78;
-            line-height: 1.9;
-            margin-bottom: 1rem;
-        }
-
-        .content-block ul {
-            opacity: 0.82;
-            line-height: 1.8;
-            padding-left: 1.2rem;
-            list-style: disc;
-        }
-
-        .feature-number {
-            color: var(--accent);
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1;
-        }
-    </style>
 </head>
 <body>
 
 <header class="bg-dark/90 backdrop-blur-md p-5 fixed top-0 w-full z-50 border-b border-white/5">
     <div class="container mx-auto flex justify-between items-center gap-6">
         <a href="index.html">
-            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
+            <img fetchpriority="high" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" class="header-logo" />
         </a>
 
         <nav class="hidden lg:flex space-x-8 text-xs font-medium tracking-widest uppercase">
@@ -201,7 +82,16 @@
             <a href="was-ist-somavia.html" class="nav-link">Was ist SOMAVIA?</a>
             <a href="index.html#contact" class="nav-link accent-color border border-[#11928c]/30 px-4 py-2 rounded-sm hover:bg-[#11928c] hover:text-black">Anfrage</a>
         </nav>
+        <button id="menuBtn" type="button" aria-label="Menü öffnen" aria-expanded="false" class="lg:hidden text-[#e0e0e0] hover:text-[#11928c] transition-colors p-2 -mr-2">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+    
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden flex-col container mx-auto mt-3 text-xs font-medium tracking-widest uppercase">
+        <a href="index.html" class="block py-3 border-b border-white/5 nav-link">Startseite</a>
+        <a href="was-ist-somavia.html" class="block py-3 border-b border-white/5 nav-link">Was ist SOMAVIA?</a>
+        <a href="index.html#contact" class="block py-3 border-b border-white/5 accent-color font-semibold">Anfrage</a>
+    </nav>
 </header>
 
 <main class="pt-20">
@@ -383,7 +273,7 @@
 <footer class="bg-dark py-12 border-t border-white/5">
     <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
         <a href="index.html">
-            <img src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
+            <img loading="lazy" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA" class="h-8 opacity-50" />
         </a>
 
         <div class="text-[10px] opacity-40 flex flex-wrap justify-center gap-6 uppercase tracking-widest">
@@ -411,5 +301,6 @@
     </div>
 </section>
 
+<script src="assets/app.js" defer></script>
 </body>
 </html>
