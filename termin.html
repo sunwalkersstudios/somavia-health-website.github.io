@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<h1 style="display:none;">SOMAVIA ist ein multisensorisches Regenerationssystem, das Licht, Klang und gezielte Reizreduktion kombiniert.</h1>
+<title>Termin anfragen | SOMAVIA</title>
+<meta name="description" content="Freie Termine für SOMAVIA-Anwendungen in Bad Nenndorf ansehen und unverbindlich anfragen.">
+<link rel="canonical" href="https://somavia.health/termin.html">
+<link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:title" content="Termin anfragen | SOMAVIA">
+<meta property="og:description" content="Freie Termine ansehen und unverbindlich anfragen.">
+<meta property="og:image" content="https://somavia.health/assets/og-cover.png">
+<meta property="og:url" content="https://somavia.health/termin.html">
+<meta property="og:type" content="website">
+
+<link rel="stylesheet" href="assets/styles.css" />
+<link rel="stylesheet" href="assets/seiten.css" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .wochenleiste { display:flex; align-items:center; justify-content:space-between;
+        gap:1rem; margin:1.5rem 0 1rem; }
+    .wochenleiste .spanne { flex:1; text-align:center; opacity:.75; font-size:.95rem; }
+    .tagblock { margin-bottom:1.6rem; }
+    .tagblock .kopf { color:#11928c; font-weight:600; margin-bottom:.7rem; font-size:1rem; }
+    .zeiten { display:grid; grid-template-columns:repeat(auto-fill,minmax(92px,1fr)); gap:.6rem; }
+    .zeit { padding:.85rem .4rem; border-radius:.7rem; border:1px solid rgba(255,255,255,.16);
+        background:rgba(255,255,255,.04); color:inherit; font:inherit; font-size:1rem;
+        cursor:pointer; transition:.15s; }
+    .zeit:hover { border-color:#11928c; }
+    .zeit.on { background:#11928c; border-color:#11928c; color:#04211f; font-weight:600; }
+    .kf label { display:block; font-size:.85rem; opacity:.7; margin:1.1rem 0 .35rem; }
+    .kf input, .kf textarea { width:100%; padding:.7rem .85rem; border-radius:.6rem;
+        border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.04);
+        color:inherit; font:inherit; }
+    .kf input:focus, .kf textarea:focus { outline:none; border-color:#11928c; }
+    .kf .zwei { display:grid; grid-template-columns:1fr 1fr; gap:0 1rem; }
+    @media (max-width:640px){ .kf .zwei { grid-template-columns:1fr; } }
+    .gewaehlt { margin:1.4rem 0; padding:.9rem 1.1rem; border-radius:.8rem;
+        border:1px solid #11928c; background:rgba(17,146,140,.12); }
+    .zustimmung { display:flex; gap:.6rem; align-items:flex-start; margin-top:1.4rem;
+        font-size:.9rem; line-height:1.5; }
+    .zustimmung input { width:auto; margin-top:.25rem; flex:none; }
+    .stand { font-size:.8rem; opacity:.5; margin-top:2rem; }
+    .melde { margin-top:1rem; font-size:.9rem; }
+    .melde.fehler { color:#e08a80; }
+    .aus { display:none; }
+</style>
+</head>
+
+<body>
+
+<header class="p-6 flex justify-between items-center">
+    <a href="index.html">
+        <img fetchpriority="high" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" style="height:40px;">
+    </a>
+    <nav class="space-x-6 text-sm">
+        <a href="index.html" class="opacity-80 hover:opacity-100">Startseite</a>
+        <a href="agb.html" class="opacity-80 hover:opacity-100">AGB</a>
+    </nav>
+</header>
+
+<main class="px-6 py-16">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+            <a href="index.html" class="btn-outline">← Zurück zur Startseite</a>
+        </div>
+
+        <div class="glass p-8 md:p-12 legal-content">
+            <div id="schritt1">
+                <h1>Termin anfragen</h1>
+                <p>
+                    Hier sehen Sie, wann in der Praxis in Bad Nenndorf noch etwas frei ist.
+                    Wählen Sie eine Zeit und schicken Sie uns Ihre Anfrage — wir bestätigen
+                    Ihnen den Termin telefonisch oder per E-Mail.
+                </p>
+
+                <div class="wochenleiste">
+                    <button class="btn-outline" id="zurueck" type="button">‹ Woche</button>
+                    <span class="spanne" id="spanne"></span>
+                    <button class="btn-outline" id="weiter" type="button">Woche ›</button>
+                </div>
+
+                <div id="liste"></div>
+                <p class="melde" id="meldung"></p>
+
+                <div class="gewaehlt aus" id="gewaehlt"></div>
+
+                <form class="kf aus" id="form" action="https://formspree.io/f/xbdqpeoa" method="POST">
+                    <input type="hidden" name="_subject" value="Terminanfrage über somavia.health">
+                    <input type="hidden" name="Wunschtermin" id="wunsch">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <div class="zwei">
+                        <div>
+                            <label for="name">Ihr Name *</label>
+                            <input id="name" name="Name" type="text" required autocomplete="name">
+                        </div>
+                        <div>
+                            <label for="telefon">Telefon *</label>
+                            <input id="telefon" name="Telefon" type="tel" required autocomplete="tel">
+                        </div>
+                    </div>
+
+                    <label for="email">E-Mail *</label>
+                    <input id="email" name="E-Mail" type="email" required autocomplete="email">
+
+                    <label for="nachricht">Nachricht (optional)</label>
+                    <textarea id="nachricht" name="Nachricht" rows="3"
+                        placeholder="z. B. Ausweichtermine, die Ihnen auch passen würden"></textarea>
+
+                    <label class="zustimmung">
+                        <input type="checkbox" id="ok" required>
+                        <span>
+                            Ich habe die <a href="datenschutz.html" class="accent-color underline">Datenschutzerklärung</a>
+                            gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung
+                            meiner Anfrage verarbeitet werden.
+                        </span>
+                    </label>
+
+                    <p style="font-size:.85rem; opacity:.6; margin-top:1.2rem">
+                        Ihre Anfrage ist unverbindlich. Ein Termin kommt erst mit unserer
+                        Bestätigung zustande.
+                    </p>
+
+                    <div style="margin-top:1.5rem">
+                        <button type="submit" class="btn-outline"
+                            style="border-color:#11928c; color:#11928c;">Anfrage senden</button>
+                    </div>
+                    <p class="melde fehler" id="formfehler"></p>
+                </form>
+
+                <p class="stand" id="stand"></p>
+            </div>
+
+            <div class="aus" id="schritt2">
+                <h1>Danke für Ihre Anfrage</h1>
+                <p id="danke_termin"></p>
+                <p>
+                    Wir melden uns zeitnah bei Ihnen und bestätigen den Termin.
+                    Sollte die gewünschte Zeit zwischenzeitlich vergeben sein,
+                    schlagen wir Ihnen eine Alternative vor.
+                </p>
+                <div style="margin-top:1.5rem">
+                    <a href="index.html" class="btn-outline">Zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-10 text-center text-sm opacity-50">
+    <a href="index.html">Startseite</a> |
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="agb.html">AGB</a> |
+    <a href="kuendigung.html">Vertrag kündigen</a>
+    <br><br>
+    © SOMAVIA
+</footer>
+
+<script>
+var WOCHENTAG = ['So','Mo','Di','Mi','Do','Fr','Sa'];
+var daten = null, wocheAb = null, wahl = null;
+
+function alsDatum(iso){ return new Date(iso + 'T00:00:00'); }
+function iso(d){ return d.toISOString().slice(0,10); }
+function kurz(d){ return WOCHENTAG[d.getDay()] + ' ' + d.toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit'}); }
+function lang(d){ return WOCHENTAG[d.getDay()] + ', ' + d.toLocaleDateString('de-DE',{day:'2-digit',month:'long',year:'numeric'}); }
+
+function zeichne(){
+    var liste = document.getElementById('liste');
+    var meldung = document.getElementById('meldung');
+    liste.innerHTML = '';
+    meldung.textContent = '';
+    meldung.classList.remove('fehler');
+
+    var bis = new Date(wocheAb); bis.setDate(bis.getDate() + 6);
+    document.getElementById('spanne').textContent = kurz(wocheAb) + ' – ' + kurz(bis);
+
+    var vonS = iso(wocheAb), bisS = iso(bis);
+    var tage = daten.tage.filter(function(t){ return t.tag >= vonS && t.tag <= bisS; });
+
+    if (!tage.length){
+        meldung.textContent = 'In dieser Woche ist nichts mehr frei. Schauen Sie mit „Woche ›" weiter.';
+        return;
+    }
+    tage.forEach(function(t){
+        var block = document.createElement('div');
+        block.className = 'tagblock';
+        var kopf = document.createElement('div');
+        kopf.className = 'kopf';
+        kopf.textContent = lang(alsDatum(t.tag));
+        block.appendChild(kopf);
+        var raster = document.createElement('div');
+        raster.className = 'zeiten';
+        t.zeiten.forEach(function(z){
+            var b = document.createElement('button');
+            b.className = 'zeit';
+            b.type = 'button';
+            b.textContent = z + ' Uhr';
+            b.onclick = function(){
+                liste.querySelectorAll('.zeit').forEach(function(o){ o.classList.remove('on'); });
+                b.classList.add('on');
+                waehle(t.tag, z);
+            };
+            raster.appendChild(b);
+        });
+        block.appendChild(raster);
+        liste.appendChild(block);
+    });
+}
+
+function waehle(tag, zeit){
+    wahl = { tag: tag, zeit: zeit };
+    var text = lang(alsDatum(tag)) + ' um ' + zeit + ' Uhr';
+    var box = document.getElementById('gewaehlt');
+    box.textContent = 'Ihr Wunschtermin: ' + text;
+    box.classList.remove('aus');
+    document.getElementById('wunsch').value = text;
+    document.getElementById('form').classList.remove('aus');
+    document.getElementById('form').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+function blaettern(tage){
+    var d = new Date(wocheAb);
+    d.setDate(d.getDate() + tage);
+    var heute = new Date(); heute.setHours(0,0,0,0);
+    wocheAb = d < heute ? heute : d;
+    zeichne();
+}
+document.getElementById('zurueck').onclick = function(){ blaettern(-7); };
+document.getElementById('weiter').onclick = function(){ blaettern(7); };
+
+document.getElementById('form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var fehler = document.getElementById('formfehler');
+    fehler.textContent = '';
+    if (!wahl){ fehler.textContent = 'Bitte wählen Sie zuerst eine Zeit.'; return; }
+    fetch(e.target.action, {
+        method: 'POST', body: new FormData(e.target), headers: {Accept: 'application/json'}
+    }).then(function(r){
+        if (!r.ok) throw new Error();
+        document.getElementById('danke_termin').textContent =
+            'Ihr Wunschtermin: ' + lang(alsDatum(wahl.tag)) + ' um ' + wahl.zeit + ' Uhr.';
+        document.getElementById('schritt1').classList.add('aus');
+        document.getElementById('schritt2').classList.remove('aus');
+        window.scrollTo({top:0});
+    }).catch(function(){
+        fehler.textContent = 'Die Anfrage konnte nicht gesendet werden. ' +
+            'Bitte rufen Sie uns an oder schreiben Sie uns eine E-Mail — die Adresse steht im Impressum.';
+    });
+});
+
+fetch('termine.json?v=' + Date.now())
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+        daten = d;
+        var heute = new Date(); heute.setHours(0,0,0,0);
+        wocheAb = heute;
+        document.getElementById('stand').textContent =
+            'Stand der freien Zeiten: ' + new Date(d.stand).toLocaleString('de-DE') +
+            ' · Dauer je Anwendung: ' + d.dauer + ' Minuten';
+        zeichne();
+    })
+    .catch(function(){
+        var m = document.getElementById('meldung');
+        m.textContent = 'Die Terminübersicht ist gerade nicht abrufbar. ' +
+            'Bitte rufen Sie uns an — die Nummer steht im Impressum.';
+        m.classList.add('fehler');
+    });
+</script>
+
+</body>
+</html>
