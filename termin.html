@@ -48,6 +48,17 @@
     .melde { margin-top:1rem; font-size:.9rem; }
     .melde.fehler { color:#e08a80; }
     .aus { display:none; }
+    .preisbox { margin-top:1.8rem; padding:1.1rem 1.3rem; border-radius:.8rem;
+        border:1px solid rgba(255,255,255,.18); background:rgba(255,255,255,.04); }
+    .preisbox .zeile { display:flex; justify-content:space-between; align-items:baseline;
+        gap:1rem; font-size:1.05rem; padding-bottom:.7rem;
+        border-bottom:1px solid rgba(255,255,255,.1); margin-bottom:.8rem; }
+    .preisbox .zeile strong { font-size:1.35rem; color:#11928c; white-space:nowrap; }
+    .preisbox .klein, .klein { font-size:.85rem; opacity:.7; line-height:1.6; margin:.6rem 0 0; }
+    .btn-buchen { padding:.9rem 2rem; border-radius:2rem; border:1px solid #11928c;
+        background:#11928c; color:#04211f; font:inherit; font-size:1.05rem; font-weight:600;
+        cursor:pointer; transition:.15s; }
+    .btn-buchen:hover { filter:brightness(1.12); }
 </style>
 </head>
 
@@ -74,8 +85,10 @@
                 <h1>Termin buchen</h1>
                 <p>
                     Hier sehen Sie, wann in der Praxis in Bad Nenndorf noch etwas frei ist.
-                    Wählen Sie eine Zeit und buchen Sie direkt — Sie erhalten Ihre
-                    Bestätigung innerhalb weniger Minuten per E-Mail.
+                    Eine Anwendung dauert 40 Minuten und kostet 39,00 € — mit 10er-Karte
+                    oder Abonnement ist sie bereits abgegolten. Wählen Sie eine Zeit und
+                    buchen Sie direkt; die Bestätigung kommt innerhalb weniger Minuten
+                    per E-Mail.
                 </p>
 
                 <div class="wochenleiste">
@@ -124,18 +137,30 @@
                         </span>
                     </label>
 
-                    <p style="font-size:.85rem; opacity:.6; margin-top:1.2rem">
-                        Mit dem Buchen reservieren Sie die Zeit verbindlich. Die Bestätigung
-                        kommt innerhalb weniger Minuten per E-Mail. Sollte die Zeit im selben
-                        Moment anderweitig vergeben worden sein, melden wir uns sofort mit
-                        Alternativen. Es gelten unsere
-                        <a href="agb.html" class="accent-color underline">AGB</a>.
-                    </p>
-
-                    <div style="margin-top:1.5rem">
-                        <button type="submit" class="btn-outline"
-                            style="border-color:#11928c; color:#11928c;">Termin verbindlich buchen</button>
+                    <div class="preisbox">
+                        <div class="zeile"><span>SOMAVIA-Anwendung, 40 Minuten</span><strong id="p_preis">39,00 €</strong></div>
+                        <p class="klein">
+                            Preis inklusive Umsatzsteuer, zahlbar vor Ort per Karte, bar oder
+                            Überweisung. <strong>Wenn Sie eine 10er-Karte oder ein Abonnement
+                            haben, wird die Anwendung davon abgebucht</strong> und es fällt
+                            nichts zusätzlich an.
+                        </p>
+                        <p class="klein">
+                            Sagen Sie bitte bis spätestens 24 Stunden vorher ab, wenn Sie den
+                            Termin nicht wahrnehmen können. Bei späterer Absage oder
+                            Nichterscheinen gilt die Anwendung als in Anspruch genommen.
+                            Es gelten unsere <a href="agb.html" class="accent-color underline">AGB</a>.
+                        </p>
                     </div>
+
+                    <div style="margin-top:1.4rem">
+                        <button type="submit" class="btn-buchen">Zahlungspflichtig buchen</button>
+                    </div>
+                    <p class="klein" style="margin-top:.9rem">
+                        Die Bestätigung kommt innerhalb weniger Minuten per E-Mail. Sollte die
+                        Zeit im selben Moment anderweitig vergeben worden sein, melden wir uns
+                        sofort mit Alternativen.
+                    </p>
                     <p class="melde fehler" id="formfehler"></p>
                 </form>
 
