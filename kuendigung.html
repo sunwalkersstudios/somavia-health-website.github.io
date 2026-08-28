@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<h1 style="display:none;">SOMAVIA ist ein multisensorisches Regenerationssystem, das Licht, Klang und gezielte Reizreduktion kombiniert.</h1>
+<title>Vertrag kündigen | SOMAVIA</title>
+<meta name="description" content="Kündigen Sie Ihr SOMAVIA-Abonnement direkt online.">
+<link rel="canonical" href="https://somavia.health/kuendigung.html">
+<link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="robots" content="noindex, follow">
+
+<link rel="stylesheet" href="assets/styles.css" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .kf label { display:block; font-size:.85rem; opacity:.7; margin:1.1rem 0 .35rem; }
+    .kf input, .kf select, .kf textarea {
+        width:100%; padding:.7rem .85rem; border-radius:.6rem;
+        border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.04);
+        color:inherit; font:inherit;
+    }
+    .kf input:focus, .kf select:focus, .kf textarea:focus { outline:none; border-color:#11928c; }
+    .kf .hinweis { font-size:.8rem; opacity:.55; margin-top:.35rem; }
+    .kf .zwei { display:grid; grid-template-columns:1fr 1fr; gap:0 1rem; }
+    @media (max-width:640px){ .kf .zwei { grid-template-columns:1fr; } }
+    .beleg { display:none; }
+    .beleg.an { display:block; }
+    .formular.aus { display:none; }
+</style>
+</head>
+
+<body>
+
+<header class="p-6 flex justify-between items-center">
+    <a href="index.html">
+        <img fetchpriority="high" src="assets/SOMAVIA_logo_final.png" alt="SOMAVIA Logo" style="height:40px;">
+    </a>
+    <nav class="space-x-6 text-sm">
+        <a href="index.html" class="opacity-80 hover:opacity-100">Startseite</a>
+        <a href="agb.html" class="opacity-80 hover:opacity-100">AGB</a>
+    </nav>
+</header>
+
+<main class="px-6 py-16">
+    <div class="max-w-3xl mx-auto">
+        <div class="mb-8">
+            <a href="index.html" class="btn-outline">← Zurück zur Startseite</a>
+        </div>
+
+        <div class="glass p-8 md:p-12 legal-content">
+            <h1>Vertrag kündigen</h1>
+
+            <div class="formular" id="formular">
+                <p>
+                    Hier können Sie Ihr SOMAVIA-Abonnement kündigen. Sie brauchen dafür kein
+                    Konto und kein Passwort. Nach dem Absenden erhalten Sie sofort eine
+                    Bestätigung mit Datum und Uhrzeit, die Sie speichern oder ausdrucken können.
+                </p>
+
+                <form class="kf" id="kform" action="https://formspree.io/f/xbdqpeoa" method="POST">
+                    <input type="hidden" name="_subject" value="Kündigung über somavia.health">
+                    <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                    <label for="art">Art der Kündigung</label>
+                    <select id="art" name="Art der Kündigung" required>
+                        <option value="ordentlich">Ordentliche Kündigung</option>
+                        <option value="ausserordentlich">Außerordentliche Kündigung</option>
+                    </select>
+
+                    <label for="grund">Grund (nur bei außerordentlicher Kündigung)</label>
+                    <input id="grund" name="Grund" type="text" placeholder="optional">
+
+                    <label for="vertrag">Welchen Vertrag möchten Sie kündigen?</label>
+                    <select id="vertrag" name="Vertrag" required>
+                        <option value="Abo Standard">Abo Standard (1× pro Woche)</option>
+                        <option value="Abo Premium">Abo Premium (2× pro Woche)</option>
+                        <option value="Sonstiges">Ein anderer Vertrag</option>
+                    </select>
+
+                    <div class="zwei">
+                        <div>
+                            <label for="name">Ihr Name</label>
+                            <input id="name" name="Name" type="text" required autocomplete="name">
+                        </div>
+                        <div>
+                            <label for="email">Ihre E-Mail-Adresse</label>
+                            <input id="email" name="E-Mail" type="email" required autocomplete="email">
+                        </div>
+                    </div>
+
+                    <label for="anschrift">Anschrift oder Kundennummer</label>
+                    <input id="anschrift" name="Anschrift oder Kundennummer" type="text" required>
+                    <div class="hinweis">Damit wir Ihren Vertrag eindeutig zuordnen können.</div>
+
+                    <label for="zeitpunkt">Zeitpunkt der Beendigung</label>
+                    <select id="zeitpunkt" name="Zeitpunkt" required>
+                        <option value="naechstmoeglich">Zum nächstmöglichen Zeitpunkt</option>
+                        <option value="datum">Zu einem bestimmten Datum</option>
+                    </select>
+                    <input id="datum" name="Kündigungsdatum" type="date" style="margin-top:.5rem; display:none">
+
+                    <label for="nachricht">Nachricht (optional)</label>
+                    <textarea id="nachricht" name="Nachricht" rows="3"></textarea>
+
+                    <div style="margin-top:1.8rem">
+                        <button type="submit" class="btn-outline" style="border-color:#11928c; color:#11928c;">
+                            Jetzt kündigen
+                        </button>
+                    </div>
+                    <div class="hinweis" id="fehler" style="color:#e08a80; margin-top:1rem"></div>
+                </form>
+            </div>
+
+            <div class="beleg" id="beleg">
+                <h2>Ihre Kündigung ist eingegangen</h2>
+                <p id="beleg_zeit"></p>
+                <div id="beleg_daten" style="line-height:1.9"></div>
+                <p style="margin-top:1.5rem">
+                    Bitte speichern oder drucken Sie diese Bestätigung. Sie erhalten zusätzlich
+                    eine Nachricht an die angegebene E-Mail-Adresse. Wir melden uns, falls
+                    etwas unklar ist.
+                </p>
+                <div style="margin-top:1.5rem">
+                    <button class="btn-outline" onclick="window.print()">Bestätigung drucken</button>
+                    <a href="index.html" class="btn-outline" style="margin-left:.6rem">Zur Startseite</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="py-10 text-center text-sm opacity-50">
+    <a href="index.html">Startseite</a> |
+    <a href="impressum.html">Impressum</a> |
+    <a href="datenschutz.html">Datenschutz</a> |
+    <a href="agb.html">AGB</a>
+    <br><br>
+    © SOMAVIA
+</footer>
+
+<script>
+document.getElementById('zeitpunkt').addEventListener('change', function () {
+    document.getElementById('datum').style.display = this.value === 'datum' ? 'block' : 'none';
+});
+
+document.getElementById('kform').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var fehler = document.getElementById('fehler');
+    fehler.textContent = '';
+    try {
+        var antwort = await fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { Accept: 'application/json' }
+        });
+        if (!antwort.ok) throw new Error('Der Versand ist fehlgeschlagen.');
+
+        // Nachweis fuer die Kundin: Zeitpunkt und Inhalt der Erklaerung, druckbar.
+        var jetzt = new Date();
+        document.getElementById('beleg_zeit').textContent =
+            'Eingegangen am ' + jetzt.toLocaleDateString('de-DE') +
+            ' um ' + jetzt.toLocaleTimeString('de-DE') + ' Uhr.';
+        var zeilen = [];
+        new FormData(form).forEach(function (wert, name) {
+            if (name.charAt(0) !== '_' && wert) {
+                zeilen.push('<strong>' + name + ':</strong> ' +
+                    String(wert).replace(/[<>&]/g, function (c) {
+                        return { '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c];
+                    }));
+            }
+        });
+        document.getElementById('beleg_daten').innerHTML = zeilen.join('<br>');
+        document.getElementById('formular').classList.add('aus');
+        document.getElementById('beleg').classList.add('an');
+        window.scrollTo({ top: 0 });
+    } catch (err) {
+        fehler.textContent = 'Die Kündigung konnte nicht gesendet werden. ' +
+            'Bitte schicken Sie uns eine E-Mail an die im Impressum genannte Adresse — ' +
+            'Ihre Kündigung ist dann ebenso wirksam.';
+    }
+});
+</script>
+
+</body>
+</html>
