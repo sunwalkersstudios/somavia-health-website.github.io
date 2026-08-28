@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <h1 style="display:none;">SOMAVIA ist ein multisensorisches Regenerationssystem, das Licht, Klang und gezielte Reizreduktion kombiniert.</h1>
-<title>Termin anfragen | SOMAVIA</title>
+<title>Termin buchen | SOMAVIA</title>
 <meta name="description" content="Freie Termine für SOMAVIA-Anwendungen in Bad Nenndorf ansehen und unverbindlich anfragen.">
 <link rel="canonical" href="https://somavia.health/termin.html">
 <link rel="icon" type="image/png" href="assets/SOMAVIA_Icon.png">
@@ -71,11 +71,11 @@
 
         <div class="glass p-8 md:p-12 legal-content">
             <div id="schritt1">
-                <h1>Termin anfragen</h1>
+                <h1>Termin buchen</h1>
                 <p>
                     Hier sehen Sie, wann in der Praxis in Bad Nenndorf noch etwas frei ist.
-                    Wählen Sie eine Zeit und schicken Sie uns Ihre Anfrage — wir bestätigen
-                    Ihnen den Termin telefonisch oder per E-Mail.
+                    Wählen Sie eine Zeit und buchen Sie direkt — Sie erhalten Ihre
+                    Bestätigung innerhalb weniger Minuten per E-Mail.
                 </p>
 
                 <div class="wochenleiste">
@@ -90,8 +90,11 @@
                 <div class="gewaehlt aus" id="gewaehlt"></div>
 
                 <form class="kf aus" id="form" action="https://formspree.io/f/xbdqpeoa" method="POST">
-                    <input type="hidden" name="_subject" value="Terminanfrage über somavia.health">
+                    <input type="hidden" name="_subject" value="Terminbuchung über somavia.health">
                     <input type="hidden" name="Wunschtermin" id="wunsch">
+                    <!-- Maschinenlesbar: die Praxis liest genau dieses Feld aus,
+                         statt den Fliesstext der Mail zu deuten. -->
+                    <input type="hidden" name="Buchungsdaten" id="buchungsdaten">
                     <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
                     <div class="zwei">
@@ -122,13 +125,16 @@
                     </label>
 
                     <p style="font-size:.85rem; opacity:.6; margin-top:1.2rem">
-                        Ihre Anfrage ist unverbindlich. Ein Termin kommt erst mit unserer
-                        Bestätigung zustande.
+                        Mit dem Buchen reservieren Sie die Zeit verbindlich. Die Bestätigung
+                        kommt innerhalb weniger Minuten per E-Mail. Sollte die Zeit im selben
+                        Moment anderweitig vergeben worden sein, melden wir uns sofort mit
+                        Alternativen. Es gelten unsere
+                        <a href="agb.html" class="accent-color underline">AGB</a>.
                     </p>
 
                     <div style="margin-top:1.5rem">
                         <button type="submit" class="btn-outline"
-                            style="border-color:#11928c; color:#11928c;">Anfrage senden</button>
+                            style="border-color:#11928c; color:#11928c;">Termin verbindlich buchen</button>
                     </div>
                     <p class="melde fehler" id="formfehler"></p>
                 </form>
@@ -137,12 +143,12 @@
             </div>
 
             <div class="aus" id="schritt2">
-                <h1>Danke für Ihre Anfrage</h1>
+                <h1>Ihr Termin ist gebucht</h1>
                 <p id="danke_termin"></p>
                 <p>
-                    Wir melden uns zeitnah bei Ihnen und bestätigen den Termin.
-                    Sollte die gewünschte Zeit zwischenzeitlich vergeben sein,
-                    schlagen wir Ihnen eine Alternative vor.
+                    Die Bestätigung erhalten Sie innerhalb weniger Minuten per E-Mail.
+                    Sollte etwas dazwischenkommen, sagen Sie uns bitte bis spätestens
+                    24 Stunden vorher Bescheid — telefonisch unter 05723 798701.
                 </p>
                 <div style="margin-top:1.5rem">
                     <a href="index.html" class="btn-outline">Zur Startseite</a>
@@ -218,9 +224,16 @@ function waehle(tag, zeit){
     wahl = { tag: tag, zeit: zeit };
     var text = lang(alsDatum(tag)) + ' um ' + zeit + ' Uhr';
     var box = document.getElementById('gewaehlt');
-    box.textContent = 'Ihr Wunschtermin: ' + text;
+    box.textContent = 'Ihr Termin: ' + text;
     box.classList.remove('aus');
     document.getElementById('wunsch').value = text;
+    document.getElementById('buchungsdaten').value = JSON.stringify({
+        tag: tag, zeit: zeit,
+        name: document.getElementById('name').value.trim(),
+        telefon: document.getElementById('telefon').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        nachricht: document.getElementById('nachricht').value.trim()
+    });
     document.getElementById('form').classList.remove('aus');
     document.getElementById('form').scrollIntoView({behavior:'smooth', block:'nearest'});
 }
@@ -240,12 +253,19 @@ document.getElementById('form').addEventListener('submit', function(e){
     var fehler = document.getElementById('formfehler');
     fehler.textContent = '';
     if (!wahl){ fehler.textContent = 'Bitte wählen Sie zuerst eine Zeit.'; return; }
+    document.getElementById('buchungsdaten').value = JSON.stringify({
+        tag: wahl.tag, zeit: wahl.zeit,
+        name: document.getElementById('name').value.trim(),
+        telefon: document.getElementById('telefon').value.trim(),
+        email: document.getElementById('email').value.trim(),
+        nachricht: document.getElementById('nachricht').value.trim()
+    });
     fetch(e.target.action, {
         method: 'POST', body: new FormData(e.target), headers: {Accept: 'application/json'}
     }).then(function(r){
         if (!r.ok) throw new Error();
         document.getElementById('danke_termin').textContent =
-            'Ihr Wunschtermin: ' + lang(alsDatum(wahl.tag)) + ' um ' + wahl.zeit + ' Uhr.';
+            'Ihr Termin: ' + lang(alsDatum(wahl.tag)) + ' um ' + wahl.zeit + ' Uhr.';
         document.getElementById('schritt1').classList.add('aus');
         document.getElementById('schritt2').classList.remove('aus');
         window.scrollTo({top:0});
