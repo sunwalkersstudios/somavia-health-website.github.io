@@ -136,7 +136,9 @@
                         </div>
                         <div>
                             <label for="telefon">Telefon *</label>
-                            <input id="telefon" name="Telefon" type="tel" required autocomplete="tel">
+                            <input id="telefon" name="Telefon" type="tel" required autocomplete="tel"
+                                   pattern="[0-9+()/ .-]{6,}" inputmode="tel"
+                                   title="Bitte eine Telefonnummer eingeben — nur Ziffern, Leerzeichen und + ( ) / -">
                         </div>
                     </div>
 
@@ -298,6 +300,13 @@ document.getElementById('form').addEventListener('submit', function(e){
     var fehler = document.getElementById('formfehler');
     fehler.textContent = '';
     if (!wahl){ fehler.textContent = 'Bitte wählen Sie zuerst eine Zeit.'; return; }
+    var tel = document.getElementById('telefon').value;
+    if (/[a-zäöüß]/i.test(tel) || tel.replace(/\D/g, '').length < 6){
+        fehler.textContent = 'Bitte prüfen Sie die Telefonnummer — dort scheint kein '
+                           + 'gültiger Anschluss zu stehen.';
+        document.getElementById('telefon').focus();
+        return;
+    }
     document.getElementById('buchungsdaten').value = JSON.stringify({
         tag: wahl.tag, zeit: wahl.zeit,
         name: document.getElementById('name').value.trim(),
